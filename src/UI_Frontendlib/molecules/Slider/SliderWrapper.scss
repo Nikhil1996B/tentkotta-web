@@ -1,0 +1,22 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../../common-styles/variables";
+
+.slider-wrapper {
+  margin-right: 89px;
+  margin-left: 89px;
+  padding: 0px 20px;
+  overflow: hidden;
+  position: relative;
+}
+// .slider-cover {
+//   margin: 0 100px;
+// }
+
+@media screen and (max-width: $small-below) {
+  .slider-wrapper {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}

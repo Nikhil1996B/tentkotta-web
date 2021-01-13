@@ -1,0 +1,79 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../common-styles/variables";
+
+.trending-now {
+    width: 100%;
+    min-height: 40vh;
+    border: 1px solid green;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+    margin: 4px;
+}
+
+.trending-now {
+    display: flex;
+    .filter {
+        width: 100%;
+    }
+}
+
+.left-section {
+    width: 50%;
+    min-height: 40vh;
+    margin: 4px;
+    padding: 8px;
+    border: 1px solid blue;
+}
+.right-section {
+    padding: 8px;
+    width: 40%;
+    min-height: 40vh;
+    border: 1px solid blue;
+    display: flex;
+    flex-wrap: wrap;
+    .sub-section {
+        margin: 0 8px 6px 0;
+        flex: 1 1 160px;
+        border: 1px solid violet;
+    }
+}
+
+.trendingnow-wrapper {
+    .filter {
+        ul {
+            display: flex;
+            li {
+                list-style: none;
+                padding: 0 8px;
+                position: relative;
+                right: 0;
+            }
+        }
+        h1 {
+            padding-left: 28px;
+            width: 20%;
+        }
+        hr {
+            width: 96%;
+        }
+    }
+}
+@media screen and (max-width: $small-below) {
+    .trending-now {
+        flex-direction: column;
+    }
+    .left-section,
+    .right-section {
+        width: 92%;
+    }
+    .trendingnow-wrapper {
+        .filter {
+            h1 {
+                width: 58%;
+            }
+        }
+    }
+}

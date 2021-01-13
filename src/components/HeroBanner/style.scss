@@ -1,0 +1,299 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../common-styles/variables";
+
+p {
+    letter-spacing: 0px;
+    color: #ffffff;
+    opacity: 1;
+    color: #ffffff;
+    text-align: left;
+    font: normal normal normal 12px/16px IRANSans(FaNum);
+}
+
+.sub-type {
+    font-size: inherit;
+    margin: 0 0 0 24px;
+    padding: 18px 0;
+}
+
+.cotnent {
+    // text-shadow: 2px 2px 8px #080808;
+}
+
+.hero-banner {
+    display: flex;
+    z-index: 1;
+    flex-direction: row;
+    min-height: 70vh;
+    background: rgba(255, 255, 255, 0.082);
+    border-radius: 4px;
+    background-position: right 3em bottom 10px;
+    background-size: cover;
+    background-position: top right 10px;
+    margin-bottom: 40px;
+    border-radius: 2px solid #000000;
+    padding-left: 76px;
+    backdrop-filter: blur(33px);
+    -webkit-backdrop-filter: blur(33px);
+    padding-top: 63px;
+    box-shadow: inset 93px 2px 139px 128px #707070;
+    background-image: url("./images/BreakingBadThumbnail.jpg");
+}
+
+.hero-banner:before {
+    content: " ";
+    opacity: 0.69;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    content: "";
+    background-attachment: fixed;
+    box-shadow: inset 93px 538px 139px 128px #707070;
+    filter: blur(8px);
+    background-image: url(/static/media/narcos.0ef60554.png) no-repeat;
+    z-index: 0;
+}
+
+.header {
+    background: black;
+    height: 4vh;
+}
+.desc-img {
+    // margin-left: 426px;
+    z-index: 1;
+    display: relative;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px solid;
+}
+
+.max-width {
+    max-width: 59%;
+}
+
+.blackLayer {
+    // box-shadow: -97px -33px 49px #000;
+    // opacity: 0.95;
+    // right: 0;
+    // z-index: 5;
+    // background: #000;
+    // position: absolute;
+    // width: 13%;
+    // height: 91%;
+}
+
+.ratingsSection {
+    // border: 1px solid white;
+    z-index: 2;
+    // min-width: 608px;
+    width: 60%;
+    h2 {
+        text-align: left;
+        margin: 0 0 0 24px;
+        // font-weight: 1000;
+        font: 33px bold GothamLight;
+        letter-spacing: 0px;
+        color: #ffffff;
+        opacity: 1;
+        border: none;
+    }
+}
+
+.ratings-wrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+.ratings-value {
+    font: normal normal 600 30px Gilroy ☞;
+    letter-spacing: 0px;
+    color: #fcc537;
+    opacity: 1;
+    padding: 0 0 0 22px;
+}
+
+.logWrapper {
+    border: 3px solid #ffab0f;
+    width: 48%;
+    height: 51%;
+    border-radius: 50%;
+}
+
+.action-panel {
+    margin: 0 110px 31px 24px;
+    background-color: #202020;
+    border-radius: 3rem;
+    box-shadow: #000000;
+    width: 60%;
+    padding: 6px;
+}
+.logoWrapper {
+    float: right;
+    border: 3px solid #ffab0f;
+    border-radius: 50%;
+    height: 51px;
+    width: 48px;
+}
+
+.like-logo {
+    height: 20px;
+    padding: 15px;
+    opacity: 1;
+    // border: 3px solid #ffab0f;
+    opacity: 1;
+    // border-radius: 50%;
+    cursor: pointer;
+}
+
+.icon-link {
+    width: 20%;
+    text-align: center;
+    // letter-spacing: -0.24px;
+    padding: 4px;
+    color: #ffffff;
+    opacity: 0.95;
+    span {
+        padding-left: 12px;
+    }
+}
+
+.genres {
+    margin: 8px;
+    background: #bebebe 0no-repeat padding-box;
+    border-radius: 7px;
+    border: none;
+    opacity: 1;
+    backdrop-filter: blur(37px);
+    -webkit-backdrop-filter: blur(30px);
+    width: 93px;
+    font: normal normal medium 17px/22px Gilroy ☞;
+    color: white;
+    height: 40px;
+    span {
+        top: 11px;
+        position: absolute;
+        right: 16px;
+    }
+}
+
+// Movie types css section
+.list-group-horizontal .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 4px;
+}
+.list-group-horizontal .list-group-item:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
+}
+.deck {
+    padding-bottom: 27px;
+}
+.form-check label {
+    padding: 1px;
+    margin-bottom: 0;
+}
+.list-inline {
+    display: flex;
+    flex-direction: row;
+}
+.form-check label input[type="checkbox"] {
+    opacity: 0;
+}
+
+@media screen and (max-width: $small-below) {
+    .sub-type {
+        padding: 17px 0;
+    }
+    .action-panel {
+        padding: 14px;
+        width: 98%;
+        margin: 0 0 0 8px;
+    }
+    .blackLayer {
+        display: none;
+    }
+    .desc-img {
+        text-align: center;
+        left: 69%;
+        img {
+            width: 34%;
+        }
+    }
+    .ratings-value {
+        font: 24px;
+    }
+    .list-inline {
+        // padding-left: 21px;
+        display: flex;
+        flex-direction: column;
+    }
+    .hero-banner,
+    .hero-banner:before {
+        width: 100%;
+        min-height: 66vh;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        display: flex;
+        flex-direction: column;
+        padding-left: 4px;
+        padding-top: 26px;
+        background-image: none;
+        box-shadow: none;
+        background-color: black;
+    }
+    .ratingsSection {
+        width: 100%;
+        h2 {
+            font: 33px;
+        }
+    }
+    .ratings-wrapper {
+        display: flex;
+    }
+    .form-check label {
+        display: flex;
+    }
+    .ratings-wrapper {
+        // padding: 0 0 0 24px;
+    }
+    .icon-link span {
+        margin-bottom: 10px;
+        padding-left: 0px;
+    }
+    .list-inline {
+        flex-direction: row;
+    }
+    .genres {
+        margin: 1px;
+    }
+    .form-check label {
+        height: 26px;
+    }
+    .max-width {
+        width: 100%;
+    }
+    .logoWrapper {
+        float: right;
+        border: 3px solid #ffab0f;
+        border-radius: 50%;
+        height: 46px;
+        width: 43px;
+    }
+    .like-logo {
+        height: 20px;
+        padding: 13px;
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 370px) {
+    body {
+        margin: -28px;
+    }
+}

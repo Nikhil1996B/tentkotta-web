@@ -1,0 +1,136 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../common-styles/variables";
+
+.container {
+    top: 0;
+    // position: absolute;
+    margin: 0 auto;
+    // min-height: 89vh;
+    z-index: 4;
+    .info-section {
+        position: absolute;
+        min-width: 32%;
+        left: 8%;
+        bottom: 26%;
+        min-height: 34%;
+        z-index: 3;
+    }
+
+    .get-subscription {
+        position: absolute;
+        min-width: 32%;
+        left: 8%;
+        bottom: 36%;
+        min-height: 34%;
+        z-index: 3;
+        p {
+            text-transform: capitalize;
+            padding: 8px 8px 0 8px;
+            font-size: 24px;
+        }
+        button {
+            background-color: coral;
+            color: white;
+        }
+        form {
+            width: 298px;
+        }
+        .color-sub {
+            color: white;
+        }
+    }
+
+    h1,
+    h4 {
+        margin: 12px;
+        color: white;
+    }
+    h1 {
+        font-size: 44px;
+        text-transform: uppercase;
+    }
+}
+
+.img-wrapper {
+    z-index: 1;
+    max-width: 100%;
+    min-height: 60vh;
+    img {
+        max-width: 100%;
+        min-height: 59vh;
+        width: auto\9; /* ie8 */
+    }
+}
+
+.card-overlay {
+    position: absolute;
+    min-width: 100%;
+    min-height: 59%;
+    opacity: 0.6;
+    z-index: 2;
+    background: black;
+}
+.button-section {
+    padding: 16px 8px;
+    .play {
+        background: white;
+        padding: 8px 12px;
+        border-radius: 4px;
+        text-align: center;
+        min-width: 60px;
+        border: none;
+    }
+
+    .addToList {
+        position: relative;
+        padding: 8px 12px;
+        font-size: 24px;
+        top: -5px;
+        text-align: center;
+        min-width: 60px;
+        border: 1px solid white;
+        border-radius: 4px;
+        margin: 4px;
+        min-height: 40px;
+        color: white;
+        background: grey;
+        margin: 4px 4px 4px 18px;
+    }
+
+    .imageCont {
+        margin-right: 11px;
+        height: 26px;
+        background: black;
+        border-radius: 50%;
+        border: none;
+    }
+    .btnTxt {
+        text-transform: uppercase;
+
+        position: relative;
+        top: -7px;
+    }
+}
+
+@media screen and (max-width: $small-below) {
+    .img-wrapper {
+        z-index: 1;
+        max-width: 100%;
+        min-height: 40vh;
+        img {
+            max-width: 100%;
+            min-height: 40vh;
+            width: auto\9; /* ie8 */
+        }
+    }
+    .card-overlay {
+        min-height: 40vh;
+    }
+    .container {
+        .get-subscription {
+            bottom: 47%;
+        }
+    }
+}

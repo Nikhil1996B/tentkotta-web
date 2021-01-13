@@ -1,0 +1,7 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../common-styles/variables";
+
+@media screen and (max-width: $small-below) {
+}

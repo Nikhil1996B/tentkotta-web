@@ -1,0 +1,90 @@
+/* VideoInfoPage.scss */
+
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../common-styles/variables";
+
+.page-background {
+    // background-color: $black !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+body {
+    cursor: pointer;
+}
+.icon {
+    height: 25px;
+    width: 25px;
+    padding-top: 20px;
+    padding-left: 70px;
+}
+.carosal-title {
+    padding: 0 72px 0 106px;
+    text-align: left;
+    font: normal normal bold $font-size-h3 GothamLight;
+    letter-spacing: 0px;
+    color: #ffffff;
+    margin: 18px 0px 8px 0px;
+}
+
+.devices-logo {
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+
+.bannerWrapper {
+    -webkit-box-shadow: inset 17px 72px 1020px #0000;
+    -moz-box-shadow: inset 17px 72px 1020px #0000;
+    box-shadow: inset 17px 72px 1020px #0000;
+    padding-left: 101px;
+    margin-right: 20px;
+}
+
+.right-navsection {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    display: flex;
+    padding: 26px 26px;
+    button {
+        text-align: center;
+        font-weight: 1000;
+        text-transform: uppercase;
+        letter-spacing: 1.26px;
+        color: #000000;
+        opacity: 1;
+    }
+}
+
+.divice-logo {
+    // filter: none;
+}
+
+.upgrade {
+    background: transparent linear-gradient(180deg, #ffbb3b 0%, #ffa90a 100%) 0% 0% no-repeat padding-box;
+    border-radius: 9px;
+    padding: 11px;
+    margin-left: 8px;
+    opacity: 1;
+    text-transform: uppercase;
+    border: none;
+    width: 104px;
+    font-weight: 850;
+}
+
+@media screen and (max-width: $small-below) {
+    .bannerWrapper {
+        padding-left: 69px;
+        padding-right: 14px;
+    }
+}
+
+// html,
+// body {
+//     overflow-x: hidden;
+// }
+// body {
+//     position: relative;
+// }

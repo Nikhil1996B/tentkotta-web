@@ -1,0 +1,55 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../../common-styles/variables";
+
+// @import "~bootstrap/scss/bootstrap";
+
+.item {
+  flex: inherit;
+  transition: transform 300ms ease 100ms;
+  margin: 0 18px;
+  position: relative;
+
+  img {
+    top: 1086px;
+    width: 165px;
+    height: 205px;
+    vertical-align: top;
+  }
+}
+.title {
+  text-align: center;
+  font: normal normal normal $font-size-h4 GothamLight;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.slider-cover {
+  // margin: 0 0 0 80px;
+}
+
+.info {
+  opacity: 0;
+}
+
+.info:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: $small-below) {
+  .slider-cover {
+    // margin: 0 0 0 45px;
+  }
+  .carosal-title {
+    padding: 0 72px 0 75px;
+  }
+  // .item {
+  //   img {
+  //     top: 1086px;
+  //     width: 94px;
+  //     height: 149px;
+  //   }
+  // }
+}

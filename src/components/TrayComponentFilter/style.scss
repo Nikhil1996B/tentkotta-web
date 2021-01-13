@@ -1,0 +1,44 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../common-styles/variables";
+
+.carousalWrapper {
+    width: 100%;
+    background: black;
+    .filter {
+        position: absolute;
+        width: 47%;
+        right: 0;
+        ul {
+            display: flex;
+            li {
+                list-style-type: none;
+                text-emphasis: none;
+                margin: 10px 26px;
+                a:hover {
+                    color: coral;
+                }
+            }
+        }
+    }
+
+    .carousel-title {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: $small-below) {
+    .carousalWrapper {
+        .filter {
+            position: relative;
+            width: 100%;
+            right: 0;
+            ul {
+                li {
+                    margin: 4px 14px;
+                }
+            }
+        }
+    }
+}

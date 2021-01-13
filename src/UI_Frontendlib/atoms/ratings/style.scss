@@ -1,0 +1,12 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../../common-styles/variables";
+
+.ratings {
+    margin: 0 10px;
+    padding: 3px 10px 0 0;
+}
+
+@media screen and (max-width: $small-below) {
+}
