@@ -12,9 +12,9 @@ const HeroBanner = ({ display = false }) => {
     const playicon = pathOr('', ['playBtn'])(icons)
     return (
         <section className="container">
-            <div className="card-overlay" />
+            {/* <div className="card-overlay" /> */}
             <div className="img-wrapper">
-                <img src={poster} alt={'poster context'} />
+                {/* <img src={poster} alt={'poster context'} /> */}
             </div>
             {true && <div className={"get-subscription"}>
                 <p>

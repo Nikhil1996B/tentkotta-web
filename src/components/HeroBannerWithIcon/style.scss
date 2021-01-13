@@ -54,12 +54,13 @@
 }
 
 .img-wrapper {
+    background-image: url("./assets/masterPoster.jpg") no-repat;
     z-index: 1;
     max-width: 100%;
-    min-height: 60vh;
+    height: 60vh;
     img {
         max-width: 100%;
-        min-height: 59vh;
+        height: 59vh;
         width: auto\9; /* ie8 */
     }
 }
