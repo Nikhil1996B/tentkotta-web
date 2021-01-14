@@ -1,3 +1,8 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../common-styles/variables";
+
 .search-background {
     // background: url("./../../assets/graphics/background-layout.png") no-repeat center center/cover;
     background-color: black;
@@ -7,4 +12,10 @@
 
 .movie-card-text {
     bottom: auto;
+}
+
+@media screen and (max-width: $small-below) {
+    .movie-list-grid li {
+        width: 40%;
+    }
 }
