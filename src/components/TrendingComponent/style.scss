@@ -6,7 +6,6 @@
 .trending-now {
     // width: 100%;
     min-height: 40vh;
-    border: 1px solid green;
     display: flex;
     flex-direction: row;
     padding: 8px;
@@ -31,19 +30,16 @@
     min-height: 40vh;
     margin: 4px;
     padding: 8px;
-    border: 1px solid blue;
 }
 .right-section {
     padding: 8px;
     width: 57%;
     min-height: 40vh;
-    border: 1px solid blue;
     display: flex;
     flex-wrap: wrap;
     .sub-section {
         margin: 0 8px 6px 0;
         flex: 1 1 280px;
-        border: 1px solid violet;
     }
 }
 
@@ -88,6 +84,10 @@
     .left-section,
     .right-section {
         width: 92%;
+        .sub-section {
+            margin: 0 8px 6px 0;
+            flex: 1 1 120px;
+        }
     }
     .trendingnow-wrapper {
         .filter {

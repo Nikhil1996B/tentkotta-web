@@ -8,10 +8,9 @@
     background-color: black;
     width: 100% !important;
     min-height: 100vh !important;
-}
-
-.movie-card-text {
-    bottom: auto;
+    .movie-card-text {
+        bottom: auto;
+    }
 }
 
 @media screen and (max-width: $small-below) {
