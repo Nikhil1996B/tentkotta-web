@@ -37,10 +37,10 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
     }
     return (
         <div>
-            <div className="carousalWrapper" id="carousalfilter">
-                {filterAvailable && <div className="filter" id="filter">
+            <div className="carousalWrapper" id="carousal-filter">
+                {filterAvailable && <div className="filter">
                     <ul>
-                        {genre.map(value => <li onClick={e => handleClick(value)}><a href="#carousalfilter">{value}</a></li>)}
+                        {genre.map(value => <li onClick={e => handleClick(value)}><a href="#carousal-filter">{value}</a></li>)}
                     </ul>
                 </div>}
                 <Home

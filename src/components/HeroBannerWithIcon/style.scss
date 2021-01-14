@@ -2,6 +2,7 @@
 @import "~normalize-scss/sass/normalize";
 
 @import "../../common-styles/variables";
+@import "../../common-styles/theme-selectors/tentkotta-webapp.scss";
 
 .container {
     top: 0;
@@ -26,12 +27,21 @@
         min-height: 34%;
         z-index: 3;
         p {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-medium) 38px/46px
+                var(--tentkotta-font-family-inter);
+            letter-spacing: var(--tentkotta-character-spacing-0);
+            color: var(--tentkotta-color-ffffff);
             text-transform: capitalize;
             padding: 8px 8px 0 8px;
             font-size: 24px;
         }
         button {
-            background-color: coral;
+            background: var(--tentkotta-color-e1540f) 0% 0% no-repeat padding-box;
+            background: #e1540f 0% 0% no-repeat padding-box;
+            width: 114px;
+            height: 50px;
+            border-radius: 10px;
+            opacity: 1;
             color: white;
         }
         form {

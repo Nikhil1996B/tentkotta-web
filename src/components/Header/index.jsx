@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import Search from '../../UI_Frontendlib/molecules/Search';
 import { useMediaQuery } from './viewportHook';
 import pathOr from "ramda/src/pathOr";
-
+import NavBarComponent from '../../components/searchBar/NavBar'
 
 require('./style.scss')
 
@@ -81,14 +81,18 @@ const MainHeader = ({ btnTxt = 'Sign In' }) => {
         <>
 
             <div className="headerShadow" style={{ ...headerBgColor, ...classSelector('tentKotta', 'header') }}>
-                {displayLogo && <img
-                    src={logo}
-                    //         srcset={`${logo} 375w,
-                    // ${logo} 1500w`}
-                    alt="tentkotta logo"
-                    sizes="(min-width: 400px) 80vw, 100vw"
-                    className={'header-logo'} style={{ ...styles.logo(display), ...styles.width('55px') }} />}
+                {displayLogo &&
+                    <a href="/">
+                        <img
+                            src={logo}
+                            //         srcset={`${logo} 375w,
+                            // ${logo} 1500w`}
+                            alt="tentkotta logo"
+                            sizes="(min-width: 400px) 80vw, 100vw"
+                            className={'header-logo'} style={{ ...styles.logo(display), ...styles.width('55px') }} />
+                    </a>}
                 <div className="right-navsection">
+                    <NavBarComponent />
                     <Header />
                     {btnTxt && < button className="upgrade" style={{ ...primaryBtColor, ...styles.display(display) }}>{btnTxt}</button>}
                 </div>
@@ -98,14 +102,14 @@ const MainHeader = ({ btnTxt = 'Sign In' }) => {
     )
 }
 
-export const Header = ({ showSearchBar = false }) => {
+export const Header = ({ showSearchBar = true }) => {
     const configSearch = {
         placeholder: 'Search',
         display: true
     }
     return (
         showSearchBar && <div data-test="headerComponent">
-            <Search {...configSearch} />
+            {/* <Search {...configSearch} /> */}
         </div>
     )
 }

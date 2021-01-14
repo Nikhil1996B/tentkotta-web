@@ -30,7 +30,7 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
             <div className="filter">
                 {title && <h1>{title}</h1>}
                 {title && <hr />}
-                {filterAvailable && <div id="filter">
+                {filterAvailable && <div >
                     <ul>
                         {genre.map(value => <li onClick={e => handleClick(value)}><a href="#tendingfilter">{value}</a></li>)}
                     </ul>
@@ -52,7 +52,9 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>
-                        1
+                        <span className="number">
+                            1
+                        </span>
                     </div>
                     <div className="sub-section"
                         style={trending && trending.movies && trending.movies.length ? {
@@ -61,7 +63,9 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>
-                        2
+                        <span className="number">
+                            2
+                        </span>
                     </div>
                     <div className="sub-section"
                         style={trending && trending.movies && trending.movies.length ? {
@@ -70,7 +74,9 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>
-                        3
+                        <span className="number">
+                            3
+                        </span>
                     </div>
                     <div className="sub-section"
                         style={trending && trending.movies && trending.movies.length ? {
@@ -79,7 +85,9 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>
-                        4
+                        <span className="number">
+                            4
+                        </span>
                     </div>
                 </div>
             </div>

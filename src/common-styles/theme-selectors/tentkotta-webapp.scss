@@ -1,0 +1,224 @@
+// font family itern - medium
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+//font family montserrat
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+// font family Proxima Nova
+
+:root {
+    /* Colors: */
+    --tentkotta-color-000000: #000000;
+    --tentkotta-color-a6a6a6: #a6a6a6;
+    --tentkotta-color-cccccc: #cccccc;
+    --tentkotta-color-f7a57c: #f7a57c;
+    --tentkotta-color-949cb0: #949cb0;
+    --tentkotta-color-e1540f: #e1540f;
+    --tentkotta-color-a7a7a7: #a7a7a7;
+    --tentkotta-color-585858: #585858;
+    --tentkotta-color-ffffff: #ffffff;
+
+    /* Font/text values */
+    --tentkotta-font-family-inter: "Inter", sans-serif;
+    --tentkotta-font-family-montserrat: "Montserrat", sans-serif;
+    --tentkotta-font-family-proxima-nova: Proxima Nova;
+    --tentkotta-font-style-normal: normal;
+    --tentkotta-font-weight-600: 600px;
+    --tentkotta-font-weight-normal: normal;
+    --tentkotta-font-weight-bold: bold;
+    --tentkotta-font-weight-medium: medium;
+    --tentkotta-font-size-12: 12px;
+    --tentkotta-font-size-14: 14px;
+    --tentkotta-font-size-15: 15px;
+    --tentkotta-font-size-18: 18px;
+    --tentkotta-font-size-19: 19px;
+    --tentkotta-font-size-20: 20px;
+    --tentkotta-font-size-21: 21px;
+    --tentkotta-font-size-28: 28px;
+    --tentkotta-font-size-29: 29px;
+    --tentkotta-font-size-30: 30px;
+    --tentkotta-character-spacing-0: 0px;
+    --tentkotta-character-spacing-0-15: 0.15px;
+    --tentkotta-character-spacing-0-19: 0.19px;
+    --tentkotta-character-spacing-0-14: 0.14px;
+    --tentkotta-character-spacing-0-18: 0.18px;
+    --tentkotta-character-spacing-0-28: 0.28px;
+    --tentkotta-character-spacing-0-07: 0.07px;
+    --tentkotta-character-spacing-0-6: 0.6px;
+    --tentkotta-character-spacing-1-4: 1.4px;
+    --tentkotta-character-spacing-0-55: 0.55px;
+    --tentkotta-line-spacing-17: 17px;
+    --tentkotta-line-spacing-19: 19px;
+    --tentkotta-line-spacing-21: 21px;
+    --tentkotta-line-spacing-22: 22px;
+    --tentkotta-line-spacing-23: 23px;
+    --tentkotta-line-spacing-24: 24px;
+    --tentkotta-line-spacing-25: 25px;
+    --tentkotta-line-spacing-34: 34px;
+    --tentkotta-line-spacing-36: 36px;
+    --tentkotta-line-spacing-38: 38px;
+    --tentkotta-line-spacing-45: 45px;
+}
+
+/* Character Styles */
+.tentkotta-character-style-1 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-normal);
+    font-size: var(--tentkotta-font-size-15);
+    line-height: var(--tentkotta-line-spacing-19);
+    letter-spacing: var(--tentkotta-character-spacing-0-15);
+    color: var(--tentkotta-color-585858);
+}
+.tentkotta-character-style-2 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-15);
+    line-height: var(--tentkotta-line-spacing-38);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-3 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-normal);
+    font-size: var(--tentkotta-font-size-12);
+    line-height: var(--tentkotta-line-spacing-38);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-949cb0);
+}
+.tentkotta-character-style-4 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-medium);
+    font-size: var(--tentkotta-font-size-14);
+    line-height: var(--tentkotta-line-spacing-38);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-949cb0);
+}
+.tentkotta-character-style-5 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-normal);
+    font-size: var(--tentkotta-font-size-14);
+    line-height: var(--tentkotta-line-spacing-38);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-ff8b53);
+}
+.tentkotta-character-style-6 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-18);
+    line-height: var(--tentkotta-line-spacing-21);
+    letter-spacing: var(--tentkotta-character-spacing-0-18);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-7 {
+    font-family: var(--tentkotta-font-family-montserrat);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-18);
+    line-height: var(--tentkotta-line-spacing-22);
+    letter-spacing: var(--tentkotta-character-spacing-0-18);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-8 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-15);
+    line-height: var(--tentkotta-line-spacing-19);
+    letter-spacing: var(--tentkotta-character-spacing-0-07);
+    color: var(--tentkotta-color-585858);
+}
+.tentkotta-character-style-9 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-14);
+    line-height: var(--tentkotta-line-spacing-17);
+    letter-spacing: var(--tentkotta-character-spacing-0-14);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-10 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-normal);
+    font-size: var(--tentkotta-font-size-19);
+    line-height: var(--tentkotta-line-spacing-23);
+    letter-spacing: var(--tentkotta-character-spacing-0-19);
+    color: var(--tentkotta-color-585858);
+}
+.tentkotta-character-style-11 {
+    font-family: var(--tentkotta-font-family-inter);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-28);
+    line-height: var(--tentkotta-line-spacing-34);
+    letter-spacing: var(--tentkotta-character-spacing-0-28);
+    color: var(--tentkotta-color-585858);
+}
+.tentkotta-character-style-12 {
+    font-family: var(--tentkotta-font-family-montserrat);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-medium);
+    font-size: var(--tentkotta-font-size-14);
+    line-height: var(--tentkotta-line-spacing-38);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-949cb0);
+}
+.tentkotta-character-style-13 {
+    font-family: var(--tentkotta-font-family-proxima-nova);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-normal);
+    font-size: var(--tentkotta-font-size-30);
+    line-height: var(--tentkotta-line-spacing-45);
+    letter-spacing: var(--tentkotta-character-spacing-0-6);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-14 {
+    font-family: var(--tentkotta-font-family-proxima-nova);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-20);
+    line-height: var(--tentkotta-line-spacing-24);
+    letter-spacing: var(--tentkotta-character-spacing-1-4);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-15 {
+    font-family: var(--tentkotta-font-family-proxima-nova);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-normal);
+    font-size: var(--tentkotta-font-size-29);
+    line-height: var(--tentkotta-line-spacing-36);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-a2a2a2);
+}
+.tentkotta-character-style-16 {
+    font-family: var(--tentkotta-font-family-proxima-nova);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-600);
+    font-size: var(--tentkotta-font-size-29);
+    line-height: var(--tentkotta-line-spacing-36);
+    letter-spacing: var(--tentkotta-character-spacing-0-55);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-17 {
+    font-family: var(--tentkotta-font-family-proxima-nova);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-bold);
+    font-size: var(--tentkotta-font-size-21);
+    line-height: var(--tentkotta-line-spacing-25);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-ffffff);
+}
+.tentkotta-character-style-18 {
+    font-family: var(--tentkotta-font-family-proxima-nova);
+    font-style: var(--tentkotta-font-style-normal);
+    font-weight: var(--tentkotta-font-weight-normal);
+    font-size: var(--tentkotta-font-size-19);
+    line-height: var(--tentkotta-line-spacing-23);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-ffffff);
+}

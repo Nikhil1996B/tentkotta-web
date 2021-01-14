@@ -15,8 +15,24 @@
         margin-top: 76px;
         position: absolute;
     }
+    h1 {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) 32px /
+            var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0);
+        color: var(--tentkotta-color-ffffff);
+    }
+    p {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) var(--tentkotta-font-size-15) /
+            var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0);
+        color: var(--tentkotta-color-949cb0);
+    }
 }
 .popular-movies-mob {
+    font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) 25px /
+        var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-ffffff);
     display: none;
 }
 @media screen and (max-width: $small-below) {

@@ -13,3 +13,29 @@ export const getByGenrer = (genrer) =>
         .then(res => res.json())
         .then(data => data.results) /* return a list of movies based on genrer */
     })
+
+
+export const search = query =>
+  fetch(`${api}/search/movie?api_key=${apiKey}&query=${query}&${defaultOptions}`)
+    .then(res => res.json())
+    .then(data => {
+      /* In cases when no movies were found. Try search for movies known for */
+      if (!data.total_results) {
+        return fetch(`${api}/search/person?api_key=${apiKey}&query=${query}&${defaultOptions}`)
+          .then(res => res.json())
+          .then(data => {
+            if (!data.total_results) {
+              return [];
+            }
+
+            let movies = data.results
+              .map(result => result.known_for) /* get only array of known_for */
+              .reduce((a, b) => [...a, ...b]); /* reduce many arrays into only one */
+
+            return movies;
+          })
+      }
+
+      /* In cases when movie were searched for return it */
+      return data.results;
+    })

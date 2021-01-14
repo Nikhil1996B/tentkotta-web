@@ -5,7 +5,6 @@
 
 .carousalWrapper {
     width: 100%;
-    background: black;
     .filter {
         position: absolute;
         width: 47%;
@@ -20,13 +19,20 @@
                     color: white;
                 }
                 a {
-                    color: coral;
+                    font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
+                        var(--tentkotta-font-size-14) / var(--tentkotta-line-spacing-38)
+                        var(--tentkotta-font-family-inter);
+                    color: #ff8b53;
                 }
             }
         }
     }
 
     .carousel-title {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) 25px /
+            var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0);
+        color: var(--tentkotta-color-ffffff);
         width: 50%;
     }
 }

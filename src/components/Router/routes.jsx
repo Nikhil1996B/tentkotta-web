@@ -6,6 +6,8 @@ import { ErrorPage } from "../../containers/ErrorPage/ErrorPage";
 import { VideoPage } from "../../containers/VideoPage/VideoPage";
 import VideoInfoPage from "../../containers/VideoInfoPage/container";
 import LoadingSpinner from '../../UI_Frontendlib/atoms/loadingSpinner';
+import SearchResults from '../../containers/SearchResults/index';
+
 
 // import { getStore } from '../../helpers/store'
 
@@ -20,6 +22,7 @@ function Routes() {
         <Route path="/home" component={HomePage} />
         <Route path="/player" component={VideoPage} />
         <Route path="/videoinfo" component={VideoInfoPage} />
+        <Route path="/search" component={SearchResults} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
