@@ -48,7 +48,7 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                     <div className="sub-section"
                         style={trending && trending.movies && trending.movies.length ? {
                             backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[0].backdrop_path})`,
+                            backgroundImage: `url(${imageUrl}${size}${trending.movies[1].backdrop_path})`,
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>
@@ -59,7 +59,7 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                     <div className="sub-section"
                         style={trending && trending.movies && trending.movies.length ? {
                             backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[0].backdrop_path})`,
+                            backgroundImage: `url(${imageUrl}${size}${trending.movies[2].backdrop_path})`,
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>
@@ -70,7 +70,7 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                     <div className="sub-section"
                         style={trending && trending.movies && trending.movies.length ? {
                             backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[0].backdrop_path})`,
+                            backgroundImage: `url(${imageUrl}${size}${trending.movies[3].backdrop_path})`,
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>
@@ -81,7 +81,7 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                     <div className="sub-section"
                         style={trending && trending.movies && trending.movies.length ? {
                             backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[0].backdrop_path})`,
+                            backgroundImage: `url(${imageUrl}${size}${trending.movies[5].backdrop_path})`,
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat'
                         } : {}}>

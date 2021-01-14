@@ -119,9 +119,10 @@ a {
 }
 
 .movie-list-container h1 {
-  font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-medium) var(--tentkotta-font-size-14) /
-    var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
-  letter-spacing: var(--tentkotta-character-spacing-0);
+  padding: 10px;
+  font-size: 38px;
+  // font: var(--tentkotta-font-family-inter);
+  // letter-spacing: var(--tentkotta-character-spacing-0);
   color: var(--tentkotta-color-ffffff);
   margin: 0;
 }

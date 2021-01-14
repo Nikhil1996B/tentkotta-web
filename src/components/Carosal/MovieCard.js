@@ -27,7 +27,7 @@ const MovieCard = ({ movie, style }) => (
         </div>
       </div>
     </div>
-    <Progress value={'70'} themes={0} />
+    {/* <Progress value={'70'} themes={0} /> */}
   </>
 );
 
