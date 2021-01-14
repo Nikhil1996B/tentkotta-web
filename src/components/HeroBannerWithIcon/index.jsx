@@ -13,7 +13,12 @@ const HeroBanner = ({ display = false }) => {
     return (
         <section className="container">
             {/* <div className="card-overlay" /> */}
-            <div className="img-wrapper">
+            <div className="img-wrapper"
+                style={{
+                    // backgroundImage: `url("https://via.placeholder.com/500")`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover'
+                }}>
                 {/* <img src={poster} alt={'poster context'} /> */}
             </div>
             {true && <div className={"get-subscription"}>

@@ -37,7 +37,7 @@ export default function CustomizedInputBase() {
                 inputProps={{ 'aria-label': 'email address' }}
                 type={'email'}
             />
-            <Button variant="outlined" color="white">
+            <Button variant="outlined" >
                 <span className="color-sub">
                     SUBSCRIBE
                 </span>

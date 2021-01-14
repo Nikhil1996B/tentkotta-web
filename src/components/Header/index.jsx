@@ -79,25 +79,25 @@ const MainHeader = ({ btnTxt = 'Sign In' }) => {
 
     return (
         <>
+            {displayLogo &&
+                <a href="/">
+                    <img
+                        src={logo}
+                        //         srcset={`${logo} 375w,
+                        // ${logo} 1500w`}
+                        alt="tentkotta logo"
+                        sizes="(min-width: 400px) 80vw, 100vw"
+                        className={'header-logo'} style={{ ...styles.logo(display), ...styles.width('55px') }} />
+                </a>}
+            <div className="headerShadow" style={{ ...headerBgColor, ...classSelector('', 'header') }}>
 
-            <div className="headerShadow" style={{ ...headerBgColor, ...classSelector('tentKotta', 'header') }}>
-                {displayLogo &&
-                    <a href="/">
-                        <img
-                            src={logo}
-                            //         srcset={`${logo} 375w,
-                            // ${logo} 1500w`}
-                            alt="tentkotta logo"
-                            sizes="(min-width: 400px) 80vw, 100vw"
-                            className={'header-logo'} style={{ ...styles.logo(display), ...styles.width('55px') }} />
-                    </a>}
-                <div className="right-navsection">
-                    <NavBarComponent />
-                    <Header />
-                    {btnTxt && < button className="upgrade" style={{ ...primaryBtColor, ...styles.display(display) }}>{btnTxt}</button>}
-                </div>
+
             </div >
-
+            <div className="right-navsection">
+                <NavBarComponent />
+                <Header />
+                {btnTxt && < button className="upgrade" style={{ ...primaryBtColor, ...styles.display(display) }}>{btnTxt}</button>}
+            </div>
         </>
     )
 }

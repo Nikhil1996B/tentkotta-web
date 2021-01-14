@@ -40,7 +40,7 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
             <div className="carousalWrapper" id="carousal-filter">
                 {filterAvailable && <div className="filter">
                     <ul>
-                        {genre.map(value => <li onClick={e => handleClick(value)}><a href="#carousal-filter">{value}</a></li>)}
+                        {genre.map((value, index) => <li key={index} onClick={e => handleClick(value)}><a href="#carousal-filter">{value}</a></li>)}
                     </ul>
                 </div>}
                 <Home

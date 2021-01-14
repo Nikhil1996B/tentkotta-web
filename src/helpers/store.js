@@ -27,7 +27,6 @@ function loadFromLocalStorage() {
     try {
         const serialisedState = sessionStorage.getItem("persistantState");
         if (serialisedState === null) return undefined;
-
         return JSON.parse(serialisedState);
     } catch (e) {
         console.warn(e);
@@ -41,6 +40,9 @@ const store = createStoreWithMiddleware(rootReducer, loadFromLocalStorage())
 store.subscribe(() => saveToLocalStorage(store.getState()));
 
 export default store
+
+
+
 
 
 // export default function configureStore() {

@@ -32,7 +32,7 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                 {title && <hr />}
                 {filterAvailable && <div >
                     <ul>
-                        {genre.map(value => <li onClick={e => handleClick(value)}><a href="#tendingfilter">{value}</a></li>)}
+                        {genre.map((value, index) => <li key={index} onClick={e => handleClick(value)}><a href="#tendingfilter">{value}</a></li>)}
                     </ul>
                 </div>}
             </div>
