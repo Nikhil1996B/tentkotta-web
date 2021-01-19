@@ -1,12 +1,13 @@
 import React from 'react';
-import Progress from '../../UI_Frontendlib/atoms/linerprogress'
+import Progress from '../../UI_Frontendlib/atoms/linerprogress';
+import Skeleton from '@material-ui/lab/Skeleton';
 require('./carousal.scss')
 
 const imageUrl = 'https://image.tmdb.org/t/p/';
 const size = 'w500';
 const TRUNCATE_LENGTH = 100;
 
-const MovieCard = ({ movie, style }) => (
+const MovieCard = ({ movie, style, progressBar = false }) => (
   <>
     <div
       className="movie-card"
@@ -19,7 +20,7 @@ const MovieCard = ({ movie, style }) => (
     >
       <div className="movie-card-container">
         <div className="movie-card-text">
-          <div className="movie-card-title">{movie.title} </div>
+          <div className="movie-card-title">{movie.title ? movie.title.substring(0, 40) + '...' : 'Additional text goes here ...'} </div>
           <div className="movie-card-info">
             <div className="movie-card-year">{movie.release_date ? movie.release_date.split('-')[0] : null}</div>
           </div>
@@ -27,7 +28,7 @@ const MovieCard = ({ movie, style }) => (
         </div>
       </div>
     </div>
-    {/* <Progress value={'70'} themes={0} /> */}
+    {progressBar && <Progress value={'70'} themes={0} />}
   </>
 );
 

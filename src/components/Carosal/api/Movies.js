@@ -14,7 +14,11 @@ export const getByGenrer = (genrer) =>
         .then(data => data.results) /* return a list of movies based on genrer */
     })
 
-
+export const getTrendingMovies = () => {
+  return fetch(`${api}/trending/all/day?api_key=df1a8a2aad5fbba70d7851155c59e9f7`)
+    .then(res => res.json())
+    .then(data => data.results)
+}
 export const search = query =>
   fetch(`${api}/search/movie?api_key=${apiKey}&query=${query}&${defaultOptions}`)
     .then(res => res.json())

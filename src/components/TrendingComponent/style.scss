@@ -13,38 +13,84 @@
 }
 
 .number {
-    width: 32px;
-    height: 48px;
     opacity: 1;
+    box-shadow: inset 1px 1px 53px 1px black;
+    width: 100%;
+}
+.number-right {
+    position: relative;
+    bottom: -143px;
 }
 
 .trending-now {
     display: flex;
     .filter {
         width: 100%;
+        display: flex;
+        hr {
+            height: 0;
+            margin-top: 36px;
+        }
     }
 }
-
+.number-one {
+    font-size: 64px;
+    color: white;
+    color: white;
+    color: transparent;
+    text-shadow: 6px 16px 1px darkgrey;
+}
 .left-section {
+    box-shadow: inset 0 0 166px #000000;
     width: 50%;
     min-height: 40vh;
     margin: 4px;
     padding: 8px;
 }
 .right-section {
+    counter-reset: section;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding: 8px;
     width: 57%;
     min-height: 40vh;
     display: flex;
     flex-wrap: wrap;
     .sub-section {
+        -moz-box-shadow: inset 0 0 166px #000000;
+        -webkit-box-shadow: inset 0 0 166px #000000;
+        box-shadow: inset 0 0 166px #000000;
         margin: 0 8px 6px 0;
-        flex: 1 1 280px;
+        flex: 1 1 250px;
+    }
+    li {
+        list-style-position: inside;
+        list-style-type: decimal-leading-zero;
+    }
+    li:before {
+        -webkit-text-stroke: 1px black;
+        color: white;
+    }
+    ol {
+        list-style: none;
+        content: counter(lis);
+    }
+
+    li::marker {
+        color: transparent;
+        text-shadow: 5px 16px 1px darkgrey;
+        background: var(--tentkotta-color-ffffff) 0% 0% no-repeat padding-box;
+        counter-increment: counter(lis);
+        font-size: 64px;
+        position: relative;
+        right: 0;
     }
 }
 
 .trendingnow-wrapper {
+    padding: 0 32px;
     .filter {
+        display: flex;
         ul {
             display: flex;
             li {
@@ -73,11 +119,16 @@
             width: 20%;
         }
         hr {
-            width: 96%;
+            height: 0;
+            width: 50%;
+            margin-top: 2.5%;
         }
     }
 }
 @media screen and (max-width: $small-below) {
+    .trendingnow-wrapper {
+        padding: 0;
+    }
     .trending-now {
         flex-direction: column;
     }
@@ -91,9 +142,21 @@
     }
     .trendingnow-wrapper {
         .filter {
+            display: block;
             h1 {
                 width: 58%;
             }
+            hr {
+                width: 83%;
+            }
         }
     }
+    .number-right {
+        position: relative;
+        bottom: -138px;
+    }
+}
+
+.trending-listitem {
+    margin-right: 10px;
 }

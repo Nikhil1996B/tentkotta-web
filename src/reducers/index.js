@@ -8,7 +8,11 @@ import search from '../components/searchBar/reducer'
 // import component reducers
 
 
-const rootReducer = combineReducers({ ThemeReducer, videoInfo, homepageReducer, search });
+const reducers = {
+    ThemeReducer, videoInfo, homepageReducer, search
+}
+
+const rootReducer = combineReducers({ ...reducers });
 export default rootReducer
 
 

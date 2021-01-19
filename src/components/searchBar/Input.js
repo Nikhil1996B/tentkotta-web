@@ -67,7 +67,7 @@ class Input extends Component {
             width: this.state.containerWidth,
             borderColor: this.state.containerBorderColor
           }}
-          // ref={node => this.wrapperRef = node}
+        // ref={node => this.wrapperRef = node}
         >
           <div className="navbar-input">
             <img
@@ -83,7 +83,7 @@ class Input extends Component {
               onKeyPress={this.onKeyPressHandler}
               onChange={this.onChangeHandler}
               style={{ opacity: this.state.inputOpacity }}
-              // ref={input => input && window.requestAnimationFrame(() => input.focus())}
+            // ref={input => input && window.requestAnimationFrame(() => input.focus())}
             />
             <div className="navbar-input-reset-query">
               <i

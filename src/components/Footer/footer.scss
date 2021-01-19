@@ -1,39 +1,46 @@
-// @import "~normalize-scss/sass/normalize";
+@import "~normalize-scss/sass/normalize";
 
-// @import "../../common-styles/variables";
+@import "../../common-styles/variables";
 
-// .footer,
-// .footer a {
-//     color: #999;
-//     font-size: 0.9rem;
-// }
-// .footer {
-//     padding-left: 112px;
-//     border-top: 5px solid;
-//     margin-top: 54px;
-//     padding-top: 24px;
-// }
+.footer,
+.footer a {
+    color: #999;
+    font-size: 0.9rem;
+}
+.footer {
+    padding: 10px;
+    border-top: 5px solid;
+    margin-top: 54px;
+    padding-top: 24px;
+}
 
-// .footer p {
-//     margin-bottom: 1.5rem;
-// }
+.footer p {
+    margin-bottom: 1.5rem;
+}
 
-// .footer .footer-cols {
-//     display: grid;
-//     grid-template-columns: repeat(4, 1fr);
-//     grid-gap: 2rem;
-// }
+.footer .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
 
-// .footer li {
-//     line-height: 1.9;
-// }
+.footer li {
+    line-height: 1.9;
+}
 
-// .footer .lang-select {
-//     margin-top: 2rem;
-//     color: #999;
-//     background-color: #000;
-//     background-image: none;
-//     border: 1px solid #333;
-//     padding: 1rem 1.2rem;
-//     border-radius: 5px;
-// }
+.footer .lang-select {
+    margin-top: 2rem;
+    color: #999;
+    background-color: #000;
+    background-image: none;
+    border: 1px solid #333;
+    padding: 1rem 1.2rem;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: $small-below) {
+    .footer .footer-cols {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

@@ -3,6 +3,7 @@ import * as Movies from '../Carosal/api/Movies';
 export const types = {
     GET_SEARCH_MOVIES: 'GET_SEARCH_MOVIES',
     GET_SEARCH_SUCCESS: 'GET_SEARCH_SUCCESS',
+    GET_SEARCH_LOADING: 'GET_SEARCH_LOADING',
     GET_SEARCH_FAULURE: 'GET_SEARCH_FAULURE',
 }
 
@@ -14,7 +15,12 @@ export const searchActions = {
 function SearchReq(query) {
 
     return (dispatch) => {
-        Movies.search(query).then(res => dispatch(success({ fetchedMovies: res, movieSearched: true })));
+        Movies.search(query)
+            .then(res => {
+                dispatch({ type: types.GET_SEARCH_LOADING });
+                dispatch(success({ fetchedMovies: res, movieSearched: true }));
+            })
+            .catch(err => dispatch(failure({ type: types.GET_SEARCH_FAULURE, err })));
     };
 
     function request(res = []) {

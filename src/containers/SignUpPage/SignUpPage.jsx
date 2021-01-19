@@ -13,7 +13,7 @@ function SignUpPage() {
 
   const handleModal = () => setShow(!show);
 
-  const { email, password,confirmpassword } = inputs;
+  const { email, password, confirmpassword } = inputs;
   return (
           
     <Modal

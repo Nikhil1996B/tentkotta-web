@@ -3,5 +3,11 @@
 
 @import "../../common-styles/variables";
 
+.tray-wrapper {
+    padding: 0 32px;
+}
 @media screen and (max-width: $small-below) {
+    .tray-wrapper {
+        padding: 0;
+    }
 }

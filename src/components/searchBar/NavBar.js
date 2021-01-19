@@ -40,7 +40,7 @@ const NavBarComponent = () => {
   }
 
   return (
-    <div style={{ height: '10px' }}>
+    <div>
       <NavBar
         onSearchMovies={query => doSearch(query)}
         onCollapseInputHandler={() => setInputClosed(true)}

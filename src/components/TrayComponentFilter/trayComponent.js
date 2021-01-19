@@ -32,8 +32,6 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
 
     const handleClick = (value) => {
         getByGenrer(`${value}`).then(res => setMovies({ ...movies, animationMovies: res }));
-
-        console.log(value)
     }
     return (
         <div>

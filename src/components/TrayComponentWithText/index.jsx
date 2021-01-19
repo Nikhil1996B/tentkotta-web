@@ -17,7 +17,6 @@ function TrayComponentText({ filterAvailable = false, title }) {
 
     return (
         <div>
-
             <div className="trayInfoWrapper" id="#trayinfo">
                 <div className="content-section">
                     <hr style={{ width: '20%' }} />

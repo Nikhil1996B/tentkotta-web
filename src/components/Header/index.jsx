@@ -28,7 +28,7 @@ const classSelector = (themeName = 'tentKotta', type = "btn") => {
 
 // Main header component
 
-const MainHeader = ({ btnTxt = 'Sign In' }) => {
+const MainHeader = ({ btnTxt = 'Sign In', signedIn = true }) => {
 
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
@@ -43,6 +43,7 @@ const MainHeader = ({ btnTxt = 'Sign In' }) => {
     // logo - currying technique
     const logo = pathOr('', ['logoImg'])(themes)
     const displayLogo = pathOr(false, ['logo'])(headerLayout)
+    const account = pathOr('', ['icons', 'account'])(themes)
 
     const { bgColor, primaryBtnColor: primBtCol, primaryFontColor: pFontClr, secondaryFontColor: sFontClr } = pathOr({}, ['colors'], themes)
 
@@ -96,7 +97,8 @@ const MainHeader = ({ btnTxt = 'Sign In' }) => {
             <div className="right-navsection">
                 <NavBarComponent />
                 <Header />
-                {btnTxt && < button className="upgrade" style={{ ...primaryBtColor, ...styles.display(display) }}>{btnTxt}</button>}
+                {/* {btnTxt && < button className="upgrade" style={{ ...primaryBtColor, ...styles.display(display) }}>{btnTxt}</button>} */}
+                {signedIn && account && <img src={account} alt="signed-in avatar" style={{ height: '44px', width: '44px' }} id="signedIn" />}
             </div>
         </>
     )

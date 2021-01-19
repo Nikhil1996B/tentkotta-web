@@ -10,6 +10,7 @@ import faceBookIcon from "../../assets/facebookButton.png";
 import SideNav from "../../components/SideNav/SideNav"
 import FullSideNav from "../../components/FullSideNav/FullSideNav"
 import Hamburger from "../../assets/images/hamburger.png";
+import Footer from '../../components/Footer/footer'
 import MainHeader from '../../components/Header'
 import AutoPlaySlider from '../../UI_Frontendlib/molecules/AutoPlaySlider'
 import HeroBanner from '../../components/HeroBannerWithIcon/index'
@@ -67,95 +68,95 @@ function HomePage(props) {
     props.videoInfo();
   }, [dispatch, themes]);
 
-
-
-
   const bgColor = themes ? {
     backgroundColor: `${themes && themes.colors ? themes.colors.bgColor : ''}`
   } : {}
   const background = themes ? {
-    background: 'none',
+    background: '#131722',
     // backgroundColor: 'white'
   } : {}
   return (
-    <div className="home-background" style={background}>
-      {displayFullSideNav && <FullSideNav show={Navshow} handleModal={handleNavModal} themes={themes}></FullSideNav>}
-      <MainHeader Navshow={Navshow} handleNavModal={handleNavModal} themes={themes} />
-      <HeroBanner />
-      {displayAutoSlider && <AutoPlaySlider {...settings} />}
-      {showMoviesCategory && <div className="darkgradient" style={bgColor}>
-        {continueWaching && <GetContinueWatching continueWaching={continueWaching} themes={themes} />}
-        {/* {movies && <GetRecommendationCarosal title={'Popular'} movies={movies} />} */}
-      </div>}
+    <>
+      <div className="home-background" style={background}>
+        {displayFullSideNav && <FullSideNav show={Navshow} handleModal={handleNavModal} themes={themes}></FullSideNav>}
+        <MainHeader Navshow={Navshow} handleNavModal={handleNavModal} themes={themes} />
+        <HeroBanner />
+        {displayAutoSlider && <AutoPlaySlider {...settings} />}
+        {showMoviesCategory && <div className="darkgradient" style={bgColor}>
+          {continueWaching && <GetContinueWatching continueWaching={continueWaching} themes={themes} />}
+          {/* {movies && <GetRecommendationCarosal title={'Popular'} movies={movies} />} */}
+        </div>}
 
-      {<TrayComponent title={'New Releases'} />}
-      {<TrendingNow title={"Trending Now"} />}
-      <TrayComponentText title={''} />
-      {
-        <TrayComponentFilter title={'2020 top Movies'} />
-      }
+        {<TrayComponent title={'New Releases'} progressBar={true} />}
+        {<TrendingNow title={"Trending Now"} />}
+        <TrayComponentText title={''} />
+        {
+          <TrayComponentFilter title={'2020 top Movies'} />
+        }
 
-      {show && <div> <Button variant="warning" onClick={handleModal}>
-        Login
+        {show && <div> <Button variant="warning" onClick={handleModal}>
+          Login
         </Button>
-      </div>}
+        </div>}
 
-      <Modal className="modal-style" centered show={show} >
-        <Modal.Header>
-        </Modal.Header>
-        <Modal.Body>
-          <div className="logo-div">
-            <img
-              src={loginCompImage}
-              alt="login"
-            />{" "}
-
-          </div>
-          <div className="company-name">
-            <img
-              src={companyNameImage}
-              alt="company-name"
-            />{" "}
-          </div>
-          <div className="heading">Login or Create account</div>
-          <form name="form" >
-            <div className="form-group">
-              <div className="form-email">EMAIL</div>
-              <input
-                placeholder="Email"
-                type="text"
-                name="email"
-                value
-                className="login-input"
-              />
+        <Modal className="modal-style" centered show={show} >
+          <Modal.Header>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="logo-div">
+              <img
+                src={loginCompImage}
+                alt="login"
+              />{" "}
 
             </div>
-          </form>{" "}
-          <div className="btn-group">
-            <button className="login-button">
-              <div className="login-button-text">CONTINUE</div>
-            </button>
-            {/*<div className="signup-cont mt-5">
+            <div className="company-name">
+              <img
+                src={companyNameImage}
+                alt="company-name"
+              />{" "}
+            </div>
+            <div className="heading">Login or Create account</div>
+            <form name="form" >
+              <div className="form-group">
+                <div className="form-email">EMAIL</div>
+                <input
+                  placeholder="Email"
+                  type="text"
+                  name="email"
+                  value
+                  className="login-input"
+                />
+
+              </div>
+            </form>{" "}
+            <div className="btn-group">
+              <button className="login-button">
+                <div className="login-button-text">CONTINUE</div>
+              </button>
+              {/*<div className="signup-cont mt-5">
               New here? Please
               <Link onClick={handleShow} className="btn signup-button">
                 Sign up
               </Link>
             </div>*/}
-          </div>
-          <div className="social-login"><h2><span>Social login</span></h2></div>
-          <div className="social-img">
-            <img className="fb-icon"
-              src={''}
-              alt="fb"
-              width="75px"
-            />{" "}
-          </div>
-        </Modal.Body>
+            </div>
+            <div className="social-login"><h2><span>Social login</span></h2></div>
+            <div className="social-img">
+              <img className="fb-icon"
+                src={''}
+                alt="fb"
+                width="75px"
+              />{" "}
+            </div>
+          </Modal.Body>
 
-        <Modal.Footer>
-        </Modal.Footer>
-      </Modal>
-    </div>
+          <Modal.Footer>
+          </Modal.Footer>
+        </Modal>
+      </div>
+      <Footer />
+    </>
   );
 }
 

@@ -14,7 +14,7 @@
         position: absolute;
         min-width: 32%;
         left: 8%;
-        bottom: 26%;
+        bottom: 49%;
         min-height: 34%;
         z-index: 3;
     }
@@ -58,8 +58,17 @@
         color: white;
     }
     h1 {
-        font-size: 44px;
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) 58px/70px
+            var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0);
+        color: var(--tentkotta-color-ffffff);
         text-transform: uppercase;
+    }
+    h4 {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
+            var(--tentkotta-font-size-14) / var(--tentkotta-line-spacing-19) Open Sans;
+        color: var(--tentkotta-color-ffffff);
+        letter-spacing: 0.05px;
     }
 }
 
@@ -68,28 +77,44 @@
     background-position: center top;
     z-index: 1;
     max-width: 100%;
-    height: 60vh;
+    min-height: 82vh;
     img {
         max-width: 100%;
-        height: 59vh;
+        height: 82vh;
         width: auto\9; /* ie8 */
     }
+}
+
+.info {
+    // position: absolute;
+    opacity: 0;
+}
+
+.container:hover .info {
+    opacity: 1;
 }
 
 .card-overlay {
     position: absolute;
     min-width: 100%;
-    min-height: 59%;
+    min-height: 82%;
     opacity: 0.6;
     z-index: 2;
-    // background: black;
+    background: black;
 }
 .button-section {
     padding: 16px 8px;
     .play {
-        background: white;
+        background: var(--tentkotta-color-ffffff) 0% 0% no-repeat padding-box;
+        background: #ffffff 0% 0% no-repeat padding-box;
+        border-radius: 3px;
+        opacity: 1;
         padding: 8px 12px;
         border-radius: 4px;
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) var(--tentkotta-font-size-18) /
+            var(--tentkotta-line-spacing-21) var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0-18);
+        color: var(--tentkotta-color-000000);
         text-align: center;
         min-width: 60px;
         border: none;
@@ -97,13 +122,21 @@
 
     .addToList {
         position: relative;
-        padding: 8px 12px;
-        font-size: 24px;
-        top: -5px;
+        border: 0.5px solid var(--tentkotta-color-ffffff);
+        background: transparent linear-gradient(180deg, #4d4d4d 0%, #6b6562 100%) 0% 0% no-repeat padding-box;
+        // border: 0.5px solid #ffffff;
+        border-radius: 3px;
+        opacity: 1;
+        padding: 13px 12px 10px 12px;
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) 16px/20px
+            var(--tentkotta-font-family-inter);
+        color: var(--tentkotta-color-ffffff);
         text-align: center;
+        letter-spacing: 0.1px;
+        top: -5px;
         min-width: 60px;
-        border: 1px solid white;
-        border-radius: 4px;
+        // border: 1px solid white;
+        // border-radius: 4px;
         margin: 4px;
         min-height: 40px;
         color: white;
@@ -130,19 +163,43 @@
     .img-wrapper {
         z-index: 1;
         max-width: 100%;
-        min-height: 40vh;
+        min-height: 58vh;
         img {
             max-width: 100%;
-            min-height: 40vh;
+            min-height: 58vh;
             width: auto\9; /* ie8 */
         }
     }
     .card-overlay {
-        min-height: 40vh;
+        min-height: 58vh;
     }
     .container {
         .get-subscription {
             bottom: 47%;
         }
+    }
+    .button-section {
+        .play {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) 10px/12px
+                var(--tentkotta-font-family-inter);
+            color: var(--tentkotta-color-000000);
+            text-align: center;
+        }
+    }
+    .container {
+        h1 {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) 25px/30px
+                var(--tentkotta-font-family-inter);
+            letter-spacing: var(--tentkotta-character-spacing-0);
+            color: var(--tentkotta-color-ffffff);
+        }
+        h4 {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) 5px/6px Open Sans;
+        }
+    }
+    .addToList {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) 10px/12px
+            var(--tentkotta-font-family-inter);
+        color: var(--tentkotta-color-ffffff);
     }
 }

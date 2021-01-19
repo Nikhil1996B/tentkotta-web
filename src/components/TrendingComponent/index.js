@@ -8,88 +8,70 @@ const TRUNCATE_LENGTH = 100;
 
 
 function TrendingNow({ filterAvailable = true, title = "" }) {
+
     const [trending, setMovies] = useState({ trending: [] })
 
     useEffect(() => {
         getByGenrer('Action').then(res => setMovies({ ...trending, movies: res }));
-    }, [])
+    }, []);
 
     const genre = [
         'Comedy',
         'Action',
         'Adventure',
         'Crime',
-    ]
+    ];
 
-    const handleClick = (value) => {
+    const firstValue = trending && trending.movies ? trending.movies.slice(1, 5) : null;
+    console.log('outside', firstValue);
+    function handleClick(value) {
         getByGenrer(`${value}`).then(res => setMovies({ ...trending, movies: res }));
-        console.log(trending.movies)
+        console.log(trending.movies);
     }
     return (
         <div className="trendingnow-wrapper" id="tendingfilter">
             <div className="filter">
                 {title && <h1>{title}</h1>}
                 {title && <hr />}
-                {filterAvailable && <div >
-                    <ul>
-                        {genre.map((value, index) => <li key={index} onClick={e => handleClick(value)}><a href="#tendingfilter">{value}</a></li>)}
-                    </ul>
-                </div>}
+                {filterAvailable &&
+                    <div className="trending-listitem">
+                        <ul>
+                            {genre.map((value, index) => <li key={index} onClick={e => handleClick(value)}><a href="#tendingfilter">{value}</a></li>)}
+                        </ul>
+                    </div>}
             </div>
             <div className="trending-now">
+
                 <div className="left-section"
                     style={trending && trending.movies && trending.movies.length ? {
                         backgroundColor: '#202020',
                         backgroundImage: `url(${imageUrl}${size}${trending.movies[0].backdrop_path})`,
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat'
-                    } : {}}></div>
-                <div className="right-section">
-                    <div className="sub-section"
-                        style={trending && trending.movies && trending.movies.length ? {
-                            backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[1].backdrop_path})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat'
-                        } : {}}>
-                        <span className="number">
-                            1
-                        </span>
-                    </div>
-                    <div className="sub-section"
-                        style={trending && trending.movies && trending.movies.length ? {
-                            backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[2].backdrop_path})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat'
-                        } : {}}>
-                        <span className="number">
-                            2
-                        </span>
-                    </div>
-                    <div className="sub-section"
-                        style={trending && trending.movies && trending.movies.length ? {
-                            backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[3].backdrop_path})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat'
-                        } : {}}>
-                        <span className="number">
-                            3
-                        </span>
-                    </div>
-                    <div className="sub-section"
-                        style={trending && trending.movies && trending.movies.length ? {
-                            backgroundColor: '#202020',
-                            backgroundImage: `url(${imageUrl}${size}${trending.movies[5].backdrop_path})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat'
-                        } : {}}>
-                        <span className="number">
-                            4
-                        </span>
+                    } : {}}>
+                    <div className="number-one">{`01`}</div>
+                    <div className="number number-right">
+                        {trending && trending.movies && trending.movies.length ? trending.movies[0].title : null}
                     </div>
                 </div>
+                <ol start="2" className="right-section">
+                    {
+                        firstValue ? firstValue.map((value, index) => (
+                            <li className="sub-section"
+                                style={value ? {
+                                    backgroundColor: '#202020',
+                                    backgroundImage: `url(${imageUrl}${size}${value.backdrop_path ? value.backdrop_path : ''})`,
+                                    backgroundSize: 'cover',
+                                    backgroundRepeat: 'no-repeat'
+                                } : {}} key={index}>
+                                <div className="number">
+                                    {value.title}
+                                </div>
+                            </li>
+                        )) : null
+                    }
+
+                </ol>
             </div>
         </div>
 
