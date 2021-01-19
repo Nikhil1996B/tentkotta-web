@@ -37,7 +37,9 @@
         width: 50%;
     }
 }
-
+.active {
+    color: white !important;
+}
 @media screen and (max-width: $small-below) {
     .carousalWrapper {
         .filter {

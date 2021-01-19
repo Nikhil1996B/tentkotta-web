@@ -9,10 +9,12 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
     const [movies, setMovies] = useState({ movies: [] })
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
-
+    const [selectedGenere, seSelectedGenere] = useState('Comedy');
     useEffect(() => {
         getByGenrer('Animation').then(res => setMovies({ ...movies, animationMovies: res }));
     }, [])
+
+    const isActive = 'active';
 
     const genre = [
         'Comedy',
@@ -32,13 +34,19 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
 
     const handleClick = (value) => {
         getByGenrer(`${value}`).then(res => setMovies({ ...movies, animationMovies: res }));
+        seSelectedGenere(`${value}`);
     }
     return (
         <div>
             <div className="carousalWrapper" id="carousal-filter">
                 {filterAvailable && <div className="filter">
                     <ul>
-                        {genre.map((value, index) => <li key={index} onClick={e => handleClick(value)}><a href="#carousal-filter">{value}</a></li>)}
+                        {genre.map((value, index) =>
+                            <li key={index} onClick={e => handleClick(value)}>
+                                <a href="#carousal-filter" className={selectedGenere == value ? isActive : ''}>
+                                    {value}
+                                </a>
+                            </li>)}
                     </ul>
                 </div>}
                 <Home

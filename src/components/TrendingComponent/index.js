@@ -10,6 +10,7 @@ const TRUNCATE_LENGTH = 100;
 function TrendingNow({ filterAvailable = true, title = "" }) {
 
     const [trending, setMovies] = useState({ trending: [] })
+    const [selectedGenere, seSelectedGenere] = useState('Comedy');
 
     useEffect(() => {
         getByGenrer('Action').then(res => setMovies({ ...trending, movies: res }));
@@ -21,12 +22,13 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
         'Adventure',
         'Crime',
     ];
-
+    const isActive = 'active';
     const firstValue = trending && trending.movies ? trending.movies.slice(1, 5) : null;
     console.log('outside', firstValue);
     function handleClick(value) {
         getByGenrer(`${value}`).then(res => setMovies({ ...trending, movies: res }));
         console.log(trending.movies);
+        seSelectedGenere(`${value}`);
     }
     return (
         <div className="trendingnow-wrapper" id="tendingfilter">
@@ -36,7 +38,13 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                 {filterAvailable &&
                     <div className="trending-listitem">
                         <ul>
-                            {genre.map((value, index) => <li key={index} onClick={e => handleClick(value)}><a href="#tendingfilter">{value}</a></li>)}
+                            {genre.map((value, index) =>
+                                <li key={index} onClick={e => handleClick(value)}>
+                                    <a href="#tendingfilter" className={selectedGenere == value ? isActive : ''} >
+                                        {value}
+                                    </a>
+                                </li>
+                            )}
                         </ul>
                     </div>}
             </div>
