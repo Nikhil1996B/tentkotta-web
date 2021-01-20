@@ -7,8 +7,13 @@
     color: #999;
     font-size: 0.9rem;
 }
+
+.callus {
+    padding-left: 30px;
+}
+
 .footer {
-    padding: 10px;
+    padding: 40px;
     border-top: 5px solid;
     margin-top: 54px;
     padding-top: 24px;
@@ -42,5 +47,11 @@
     .footer .footer-cols {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+    }
+    .footer {
+        padding: 10px;
+    }
+    .callus {
+        padding-left: 10px;
     }
 }

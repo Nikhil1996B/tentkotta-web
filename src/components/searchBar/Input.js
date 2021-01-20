@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import searchicon from './assets/search-icon.png'
+import searchicon from './assets/search-icon2.png'
 require('./style.scss');
 
 
 class Input extends Component {
   state = {
     query: '',
-    containerWidth: '10%',
-    containerBorderColor: 'transparent',
-    inputOpacity: 0,
-    inputFocus: false,
-    cursor: 'pointer'
+    containerWidth: '85%',
+    // containerBorderColor: '#fff',
+    inputFocus: true,
+    inputOpacity: 1,
+    cursor: 'default'
   }
 
   componentDidMount() {
@@ -40,13 +40,13 @@ class Input extends Component {
     this.props.onExpandInputHandler();
   }
 
-  closeInputHandler = () => this.setState({
-    containerWidth: '10%',
-    containerBorderColor: 'transparent',
-    inputFocus: false,
-    inputOpacity: 0,
-    cursor: 'pointer'
-  });
+  // closeInputHandler = () => this.setState({
+  //   containerWidth: '10%',
+  //   containerBorderColor: 'transparent',
+  //   inputFocus: false,
+  //   inputOpacity: 0,
+  //   cursor: 'pointer'
+  // });
 
   resetQueryHandler = () => this.setState({ query: '' });
 
@@ -71,10 +71,10 @@ class Input extends Component {
         >
           <div className="navbar-input">
             <img
-              src={searchicon}
+              src={this.props.searchIcon ? this.props.searchIcon : searchicon}
               aria-hidden="true"
               onClick={this.openInputHandler}
-              style={{ cursor: this.state.cursor, width: '29px', backgroundColor: 'white' }}
+              style={{ cursor: this.state.cursor, width: '29px' }}
             ></img>
             <input
               type="text"

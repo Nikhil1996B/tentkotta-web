@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import poster from './assets/masterPoster.jpg';
 import { useSelector } from 'react-redux';
 import pathOr from "ramda/src/pathOr";
+import { Route, Redirect } from 'react-router-dom';
 import { useMediaQuery } from '../Header/viewportHook';
 import CustomizedInputBase from "./subscriptionForm";
 import VideoPreview from '../../UI_Frontendlib/molecules/previewVideoPlayer';
@@ -36,6 +37,11 @@ const HeroBanner = ({ display = true }) => {
         backgroundSize: 'cover',
         overflow: 'hidden'
     }
+
+
+    const handleClick = () => {
+        return window.location.pathname = '/player';
+    }
     return (
         <section className="container">
             <div className="card-overlay" />
@@ -64,19 +70,22 @@ const HeroBanner = ({ display = true }) => {
                         <div className={"get-subscription"}>
                             <p>
                                 get your subscription now
-                  </p>
+                            </p>
                             <CustomizedInputBase />
                         </div>
                     }
                     {movieDetails &&
                         <div className="info-section">
-                            <h1>Master</h1>
-                            <h4>2021 | ACTION-THRILLER | 179 Minutes</h4>
+                            <h1>PRISON BREAK S4</h1>
+                            <h4>2009 | ACTION-THRILLER | 179 Minutes</h4>
                             <div className="button-section">
-                                <button className="play"><span>
-                                    <img src={`${playicon}`} alt="play button" className="imageCont" />
-                                </span>
-                                    <span className="btnTxt">{'play'}</span>
+                                <button className="play" onClick={() => handleClick()}>
+                                    <span>
+                                        <img src={`${playicon}`} alt="play button" className="imageCont" />
+                                    </span>
+                                    <span className="btnTxt">
+                                        {'play'}
+                                    </span>
                                 </button>
                                 <button className="addToList">+ Add to my list</button>
                             </div>

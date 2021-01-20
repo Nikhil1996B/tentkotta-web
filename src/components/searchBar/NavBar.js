@@ -1,19 +1,28 @@
 import React, { Component, useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Input, Avatar } from './index';
 import ListMovies from './ListMovies';
 import * as Movies from '../../components/Carosal/api/Movies';
 import { searchActions } from './actions';
+import pathOr from "ramda/src/pathOr";
+
 require('./style.scss');
 
 export const NavBar = ({ onSearchMovies, onCollapseInputHandler, onExpandInputHandler }) => {
 
+  const themes = useSelector(state => state.ThemeReducer);
+
+  const { icons } = themes
+  const searchIcon = pathOr('', ['search'])(icons)
+
   return (
     <div className="navbar-container">
       <Input
-        placeholder="Movies..."
+        searchIcon={searchIcon}
+        placeholder="Search"
         onEnterPressed={query => onSearchMovies(query)}
         onCollapseInputHandler={() => onCollapseInputHandler()}
         onExpandInputHandler={() => onExpandInputHandler()}
@@ -48,7 +57,7 @@ const NavBarComponent = () => {
       />
       {
         movieSearched ?
-          <Route exact path='/' render={() => {
+          <Route exact path='/*' render={() => {
             return <Redirect to="/search" />
           }
           } /> : null

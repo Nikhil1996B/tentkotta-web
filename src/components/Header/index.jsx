@@ -91,8 +91,6 @@ const MainHeader = ({ btnTxt = 'Sign In', signedIn = true }) => {
                         className={'header-logo'} style={{ ...styles.logo(display), ...styles.width('55px') }} />
                 </a>}
             <div className="headerShadow" style={{ ...headerBgColor, ...classSelector('', 'header') }}>
-
-
             </div >
             <div className="right-navsection">
                 <NavBarComponent />

@@ -15,7 +15,7 @@
             li {
                 list-style-type: none;
                 text-emphasis: none;
-                margin: 10px 26px;
+                margin: 10px 55px;
                 a:hover {
                     color: white;
                 }
@@ -40,16 +40,28 @@
 .active {
     color: white !important;
 }
+.tray-with-filter {
+    padding: 0 20px;
+}
+
 @media screen and (max-width: $small-below) {
     .carousalWrapper {
         .filter {
-            position: relative;
+            // position: relative;
+            margin-top: 16px;
             width: 100%;
             right: 0;
             ul {
                 li {
                     margin: 4px 14px;
                 }
+            }
+        }
+        .carousel-title {
+            margin-bottom: 12px;
+            width: auto;
+            hr {
+                display: none;
             }
         }
     }

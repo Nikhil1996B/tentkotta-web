@@ -19,7 +19,7 @@ function TrayComponentText({ filterAvailable = false, title }) {
         <div>
             <div className="trayInfoWrapper" id="#trayinfo">
                 <div className="content-section">
-                    <hr style={{ width: '20%' }} />
+                    <hr style={{ width: '20%', position: 'absolute' }} />
                     <h1>Popular movies to watch now</h1>
                     <p>Most watched movies by day</p>
                     <hr />

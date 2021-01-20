@@ -105,6 +105,7 @@
 .button-section {
     padding: 16px 8px;
     .play {
+        cursor: pointer;
         background: var(--tentkotta-color-ffffff) 0% 0% no-repeat padding-box;
         background: #ffffff 0% 0% no-repeat padding-box;
         border-radius: 3px;
@@ -121,6 +122,7 @@
     }
 
     .addToList {
+        cursor: pointer;
         position: relative;
         border: 0.5px solid var(--tentkotta-color-ffffff);
         background: transparent linear-gradient(180deg, #4d4d4d 0%, #6b6562 100%) 0% 0% no-repeat padding-box;

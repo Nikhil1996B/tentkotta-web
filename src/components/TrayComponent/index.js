@@ -5,7 +5,7 @@ import { useMediaQuery } from '../../components/Header/viewportHook';
 
 require('./style.scss')
 
-function TrayComponent({ filterAvailable = true, title, progressBar }) {
+function TrayComponent({ filterAvailable = true, title, progressBar, style, displayTextOnCard }) {
 
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
@@ -20,6 +20,8 @@ function TrayComponent({ filterAvailable = true, title, progressBar }) {
         <div>
             <div className="tray-wrapper">
                 <Home
+                    displayTextOnCard={displayTextOnCard}
+                    style={style}
                     movies={movies}
                     title={title}
                     displayCard={display ? 3 : 5}

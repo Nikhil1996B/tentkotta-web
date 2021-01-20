@@ -22,9 +22,16 @@ class Carousel extends Component {
   render() {
     const { title, style, children, displayCard = 5 } = this.props;
     const iconStyle = {
-      width: '20px',
+      width: '12px',
       height: '44px'
     };
+    const marginLeft = {
+      marginLeft: '37px'
+    }
+
+    const marginRight = {
+      marginRight: '37px'
+    }
 
     return (
       <div className="carousel-container">
@@ -52,8 +59,8 @@ class Carousel extends Component {
             activeItemIndex={this.state.activeItemIndex}
             activePosition={'center'}
             chevronWidth={24}
-            rightChevron={<img src={leftChevron} style={{ ...iconStyle }} alt="right chevron" />}
-            leftChevron={<img src={rightChev} style={{ ...iconStyle }} alt="left chevron" />}
+            rightChevron={<img src={leftChevron} style={{ ...iconStyle, ...marginLeft }} alt="right chevron" />}
+            leftChevron={<img src={rightChev} style={{ ...iconStyle, ...marginRight }} alt="left chevron" />}
             outsideChevron={false}
           >
             {children}

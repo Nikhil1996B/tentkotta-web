@@ -4,12 +4,13 @@ import { MovieCard } from './MovieCard';
 import pathOr from "ramda/src/pathOr";
 
 
-const Home = ({ movies, title, style, displayCard, progressBar }) => {
+const Home = ({ movies, title, style, displayCard, progressBar, displayTextOnCard }) => {
   const filterMovies = pathOr([], ['animationMovies'])(movies)
   return <div className="home-container">
     <Carousel title={title} style={style} displayCard={displayCard}>
       {filterMovies.map(movie => (
         <MovieCard
+        displayTextOnCard={displayTextOnCard}
           key={movie.id}
           movie={movie}
           progressBar={progressBar}

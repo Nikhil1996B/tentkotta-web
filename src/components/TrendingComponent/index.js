@@ -7,13 +7,13 @@ const size = 'w500';
 const TRUNCATE_LENGTH = 100;
 
 
-function TrendingNow({ filterAvailable = true, title = "" }) {
+function TrendingNow({ filterAvailable = true, title = "", className }) {
 
     const [trending, setMovies] = useState({ trending: [] })
-    const [selectedGenere, seSelectedGenere] = useState('Comedy');
+    const [selectedGenere, seSelectedGenere] = useState('Crime');
 
     useEffect(() => {
-        getByGenrer('Action').then(res => setMovies({ ...trending, movies: res }));
+        getByGenrer('Crime').then(res => setMovies({ ...trending, movies: res }));
     }, []);
 
     const genre = [
@@ -24,7 +24,6 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
     ];
     const isActive = 'active';
     const firstValue = trending && trending.movies ? trending.movies.slice(1, 5) : null;
-    console.log('outside', firstValue);
     function handleClick(value) {
         getByGenrer(`${value}`).then(res => setMovies({ ...trending, movies: res }));
         console.log(trending.movies);
@@ -49,19 +48,23 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                     </div>}
             </div>
             <div className="trending-now">
-
-                <div className="left-section"
+                <ol className="left-section"
                     style={trending && trending.movies && trending.movies.length ? {
                         backgroundColor: '#202020',
                         backgroundImage: `url(${imageUrl}${size}${trending.movies[0].backdrop_path})`,
                         backgroundSize: 'cover',
                         backgroundRepeat: 'no-repeat'
                     } : {}}>
-                    <div className="number-one">{`01`}</div>
-                    <div className="number number-right">
-                        {trending && trending.movies && trending.movies.length ? trending.movies[0].title : null}
-                    </div>
-                </div>
+                    <li>
+                        <div className="sub-section" />
+                        <div className="number number-right">
+                            {trending && trending.movies && trending.movies.length ?
+                                trending.movies[0].title : null}<br />
+                            {trending && trending.movies && trending.movies.length ?
+                                trending.movies[0].release_date.split('-')[0] : null}
+                        </div>
+                    </li>
+                </ol>
                 <ol start="2" className="right-section">
                     {
                         firstValue ? firstValue.map((value, index) => (
@@ -73,12 +76,12 @@ function TrendingNow({ filterAvailable = true, title = "" }) {
                                     backgroundRepeat: 'no-repeat'
                                 } : {}} key={index}>
                                 <div className="number">
-                                    {value.title}
+                                    {value.title} <br />
+                                    {value.release_date ? value.release_date.split('-')[0] : null}
                                 </div>
                             </li>
                         )) : null
                     }
-
                 </ol>
             </div>
         </div>

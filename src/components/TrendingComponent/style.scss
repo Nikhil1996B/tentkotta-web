@@ -13,13 +13,14 @@
 }
 
 .number {
+    padding: 2px;
+    margin-top: 10px;
     opacity: 1;
-    box-shadow: inset 1px 1px 53px 1px black;
     width: 100%;
 }
 .number-right {
     position: relative;
-    bottom: -143px;
+    bottom: -203px;
 }
 
 .trending-now {
@@ -41,13 +42,14 @@
     text-shadow: 6px 16px 1px darkgrey;
 }
 .left-section {
-    box-shadow: inset 0 0 166px #000000;
+    box-shadow: inset 86px 10px 166px #000000;
     width: 50%;
     min-height: 40vh;
     margin: 4px;
     padding: 8px;
 }
 .right-section {
+    background-position: 50% 50%;
     counter-reset: section;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -57,34 +59,54 @@
     display: flex;
     flex-wrap: wrap;
     .sub-section {
-        -moz-box-shadow: inset 0 0 166px #000000;
-        -webkit-box-shadow: inset 0 0 166px #000000;
-        box-shadow: inset 0 0 166px #000000;
+        -moz-box-shadow: inset 86px 10px 166px #000000;
+        -webkit-box-shadow: inset 86px 10px 166px #000000;
+        box-shadow: inset 86px 10px 166px #000000;
         margin: 0 8px 6px 0;
         flex: 1 1 250px;
     }
-    li {
-        list-style-position: inside;
-        list-style-type: decimal-leading-zero;
-    }
-    li:before {
-        -webkit-text-stroke: 1px black;
-        color: white;
-    }
-    ol {
-        list-style: none;
-        content: counter(lis);
-    }
+}
 
-    li::marker {
-        color: transparent;
-        text-shadow: 5px 16px 1px darkgrey;
-        background: var(--tentkotta-color-ffffff) 0% 0% no-repeat padding-box;
-        counter-increment: counter(lis);
-        font-size: 64px;
-        position: relative;
-        right: 0;
-    }
+.sub-section {
+    counter-increment: indexs;
+    list-style-type: none;
+    background-position: 50% 50%;
+}
+.sub-section:after {
+    // content: "";
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // width: 5%;
+    // height: 100%;
+    // background: linear-gradient(90deg, transparent, #141414);
+}
+.sub-section:before {
+    content: counter(indexs);
+    width: 102px;
+    height: 140px;
+    line-height: 147px;
+    color: transparent;
+    font-size: 160px;
+    font-weight: 900;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+ol:nth-child(n + 2) .sub-section::before {
+    font-size: 80px;
+    position: relative;
+    bottom: -99px;
+    left: 80%;
+}
+ol:nth-child(1) .sub-section::before {
+    position: relative;
+    top: 287px;
+    left: 80%;
+}
+
+ol {
+    list-style: none;
+    counter-reset: indexs;
 }
 
 .trendingnow-wrapper {
@@ -95,7 +117,7 @@
             display: flex;
             li {
                 list-style: none;
-                padding: 0 8px;
+                padding: 0 43px;
                 position: relative;
                 right: 0;
                 a:hover {
@@ -120,12 +142,15 @@
         }
         hr {
             height: 0;
-            width: 50%;
+            width: 29%;
             margin-top: 2.5%;
         }
     }
 }
 @media screen and (max-width: $small-below) {
+    .sub-section:before {
+        font-size: 80px;
+    }
     .trendingnow-wrapper {
         padding: 0;
     }
@@ -140,6 +165,11 @@
             flex: 1 1 120px;
         }
     }
+    .right-section {
+        .sub-section {
+            box-shadow: inset 33px 10px 75px #000000;
+        }
+    }
     .trendingnow-wrapper {
         .filter {
             display: block;
@@ -147,13 +177,32 @@
                 width: 58%;
             }
             hr {
+                display: none;
                 width: 83%;
+            }
+            ul {
+                margin-left: -34px;
+                li {
+                    list-style: none;
+                    padding: 0 15px;
+                }
             }
         }
     }
     .number-right {
         position: relative;
-        bottom: -138px;
+        bottom: -45px;
+    }
+    ol:nth-child(1) .sub-section::before {
+        font-size: 155px;
+        top: 127px;
+    }
+    ol:nth-child(n + 2) .sub-section::before {
+        left: 72%;
+        bottom: -99px;
+    }
+    .number {
+        width: 68%;
     }
 }
 

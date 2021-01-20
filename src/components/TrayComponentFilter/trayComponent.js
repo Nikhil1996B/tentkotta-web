@@ -9,7 +9,7 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
     const [movies, setMovies] = useState({ movies: [] })
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
-    const [selectedGenere, seSelectedGenere] = useState('Comedy');
+    const [selectedGenere, seSelectedGenere] = useState('Drama');
     useEffect(() => {
         getByGenrer('Animation').then(res => setMovies({ ...movies, animationMovies: res }));
     }, [])
@@ -17,8 +17,8 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
     const isActive = 'active';
 
     const genre = [
-        'Comedy',
-        'Action',
+        'Drama',
+        'Sci-Fi',
         'Adventure',
         'Crime',
     ]
@@ -37,7 +37,7 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
         seSelectedGenere(`${value}`);
     }
     return (
-        <div>
+        <div className="tray-with-filter">
             <div className="carousalWrapper" id="carousal-filter">
                 {filterAvailable && <div className="filter">
                     <ul>

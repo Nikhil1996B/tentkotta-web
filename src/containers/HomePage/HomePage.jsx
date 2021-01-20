@@ -87,8 +87,9 @@ function HomePage(props) {
           {/* {movies && <GetRecommendationCarosal title={'Popular'} movies={movies} />} */}
         </div>}
 
-        {<TrayComponent title={'New Releases'} progressBar={true} />}
-        {<TrendingNow title={"Trending Now"} />}
+        {<TrayComponent title={'Continue watching'} progressBar={true} style={{}} displayTextOnCard={true} />}
+        {<TrayComponent title={'New Releases'} style={{}} displayTextOnCard={true} />}
+        {<TrendingNow title={"Trending Movies"} className={{}} />}
         <TrayComponentText title={''} />
         {
           <TrayComponentFilter title={'2020 top Movies'} />
