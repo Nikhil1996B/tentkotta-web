@@ -5,7 +5,16 @@ import { useMediaQuery } from '../../components/Header/viewportHook';
 
 require('./style.scss')
 
-function TrayComponentText({ filterAvailable = false, title, progressBar, disPlayContent, viewAll = false, redirecturl }) {
+function TrayComponentText({
+    filterAvailable = false,
+    title = '',
+    progressBar,
+    disPlayContent = {
+        header: 'Popular movies to watch now',
+        content: 'Most watched movies by days'
+    },
+    viewAll = false,
+    redirecturl }) {
 
     // media query display
     const display = useMediaQuery('(min-width: 768px)');

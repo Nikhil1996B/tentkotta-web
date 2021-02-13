@@ -50,7 +50,7 @@ a {
   }
   &:hover > .displayhoverScreen {
     //position: absolute;
-    display: flow-root;
+    display: contents;
     // padding: 1px;
     z-index: 7;
   }

@@ -57,3 +57,14 @@ export const SubscribeBtnStyle = {
     border: 'none',
     fontSize: '14px'
 }
+
+export const SignInBtnStyle = () => {
+    return {
+        background: '#E1540F',
+        color: '#FFFFFF',
+        font: '19px',
+        padding: '0.8rem 1.5rem',
+        border: 'none',
+        textTransform: 'uppercase'
+    }
+}

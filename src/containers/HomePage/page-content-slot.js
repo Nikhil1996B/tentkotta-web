@@ -2,14 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { pathOr, isNil, sortBy, pluck, sortWith, ascend, compose, prop, pick, whereEq, any, filter, flatten } from 'ramda';
 import { apiTokenActions } from "../../actions";
-import HeaderComp from '../../components/Header/index1';
+import HeaderComp from '../../components/Header/indexv1';
+import { getByGenrer } from '../../components/Carousel/api/Movies';
 import HomePageLayout from './HomePagelayout';
-import { HeroBannerText } from '../../components/HeroBannerWithIcon/index1';
+import { HeroBannerText } from '../../components/HeroBannerWithIcon/indexv1';
 import { ContentTraySection } from './ContentTraysSection';
 import TrayComponentFilter from '../../components/TrayComponentFilter/trayComponent';
 import TrayComponentText from '../../components/TrayComponentWithText/index';
 import TrayComponent from '../../components/TrayComponent/index';
-import TrendingNow from '../../components/TrendingComponent';
+import TrendingNowTrayHome from './Trays/TrendingNowHome/trending-now-home';
 import { Global, css } from '@emotion/react';
 import Footer from '../../components/Footer/footer';
 
@@ -41,10 +42,10 @@ const availableHomePageComponent = [
         module_id: 'new-release-carousal-component',
         component: TrayComponent
     },
-    // {
-    //     module_id: 'trending-movies-component',
-    //     component: TrendingNow
-    // },
+    {
+        module_id: 'trending-movies-component',
+        component: TrendingNowTrayHome
+    },
     {
         module_id: 'popular-movies-now-component',
         component: TrayComponentText
@@ -90,7 +91,7 @@ function HomePageContent({ user }) {
                 },
                 {
                     module_id: 'continue-watching-tray-component',
-                    index: 4
+                    index: 2
                 },
                 {
                     module_id: 'new-release-carousal-component',
@@ -98,12 +99,12 @@ function HomePageContent({ user }) {
                 },
                 {
                     module_id: 'trending-movies-component',
-                    index: 3
+                    index: 4
                 },
 
                 {
                     module_id: 'popular-movies-now-component',
-                    index: 2
+                    index: 3
                 }
 
             ]
@@ -118,6 +119,7 @@ function HomePageContent({ user }) {
             ]
         }
     };
+
 
     const ParseLayout = (parseHeaderComponentId) => {
         var getcompid = pluck('module_id');
@@ -153,6 +155,21 @@ function HomePageContent({ user }) {
             // dispatch(themeActions.themes());
         }
         // props.videoInfo();
+    }, []);
+
+
+    // Page wise content
+    const [trending, setMovies] = useState({ trending: [] })
+
+    useEffect(() => {
+        getByGenrer('Action').then(
+            res => {
+                setMovies({ ...trending, movies: res });
+                dispatch({ type: 'PAGE_CONTENT', ...{ payload: res } })
+            }
+        );
+
+        return () => { }
     }, []);
 
     return (

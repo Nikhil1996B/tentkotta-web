@@ -6,7 +6,6 @@ export const JubotronStyle = (url = '../../assets/masterPoster.png') => {
         backgroundRepeat: `no-repeat, repeat`,
         backgroundColor: '#131722',
         minHeight: '60vh',
-        border: '1px solid white',
         backgroundPosition: `center`,
         backgroundSize: 'cover'
     }
@@ -60,7 +59,8 @@ export const CardStyle = {
     addToListTxt: (bp) => ({
         color: '#FFFFFF',
         fontSize: `${bp ? '14px' : '21px'}`,
-        marginLeft: '1rem'
+        marginLeft: '1rem',
+        textTransform: 'uppercase'
     })
 }
 
@@ -68,7 +68,8 @@ export const SubscriptionStyleTitle = (breakpoint) => {
     const bk = pathOr('', ['sm'])(breakpoint);
     return {
         color: `#FFFFFF`,
+        textTransform: 'uppercase',
         fontSize: `${bk ? '18px' : '38px'}`,
-        margin: '2rem'
+        marginBottom: '2rem'
     }
 }

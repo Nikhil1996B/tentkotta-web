@@ -13,7 +13,7 @@ export default function JumbotronComp() {
                 ({ url, isSignedIn, handleClick, plus, play, breakpoint }) => (
                     <Jumbotron style={JubotronStyle(url)} fluid className={'rounded-0'}>
                         {isSignedIn ? (
-                            <Card style={{ ...CardStyle.cardwrapper(), width: `${pathOr('', ['sm'])(breakpoint) ? '21rem' : '28rem'}` }}>
+                            <Card style={{ ...CardStyle.cardwrapper(), width: `${pathOr('', ['sm'])(breakpoint) ? '21rem' : '30rem'}` }}>
                                 <Card.Body>
                                     <Card.Title style={CardStyle.title(pathOr('', ['sm'])(breakpoint))}>
                                         MASTER

@@ -1,9 +1,26 @@
 import React, { useState } from 'react';
 import { HeaderContext } from '../../header-context';
-import { Container, Row, Col, Form, Button, Image, Card, Figure } from 'react-bootstrap';
+import {
+    Container,
+    Row,
+    Col,
+    Form,
+    Button,
+    Image,
+    Card,
+    Figure
+} from 'react-bootstrap';
 import { pathOr } from 'ramda';
 import SideNav from 'react-simple-sidenav';
-import { CardHeaderStyle, CardStyle, ImageStyle, CrossBtnStyle, FigureStyle, SubscribeBtnStyle } from './user-auth-style';
+import {
+    CardHeaderStyle,
+    CardStyle,
+    ImageStyle,
+    CrossBtnStyle,
+    FigureStyle,
+    SubscribeBtnStyle,
+    SignInBtnStyle
+} from './user-auth-style';
 
 
 export const SideMenuContent = ({ icons = "", setShow, handleSignInClick, history, dispatch }) => {
@@ -126,7 +143,7 @@ export default function UserAuth() {
             {
                 ({ isSignedIn, button, handleSignInClick }) => (
                     <>
-                        {!isSignedIn && <Button onClick={() => handleSignInClick()}>Sign In</Button>}
+                        {!isSignedIn && <Button onClick={() => handleSignInClick()} style={SignInBtnStyle()}>Sign In</Button>}
                         {isSignedIn && <AuthenticatedUser />}
                     </>
                 )

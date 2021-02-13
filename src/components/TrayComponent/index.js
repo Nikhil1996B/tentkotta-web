@@ -5,16 +5,21 @@ import { useMediaQuery } from '../../components/Header/viewportHook';
 
 require('./style.scss')
 
-function TrayComponent({ filterAvailable = true, title, progressBar, style, displayTextOnCard, displayHoverState, redirecturl }) {
-
+function TrayComponent({
+    filterAvailable = true,
+    title = "New Movies to Watch",
+    progressBar,
+    style,
+    displayTextOnCard,
+    displayHoverState = true,
+    redirecturl
+}) {
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
-
     const [movies, setMovies] = useState({ movies: [] })
-
     useEffect(() => {
         getByGenrer('Action').then(res => setMovies({ ...movies, animationMovies: res }));
-    }, [])
+    }, []);
 
     return (
         <div>
@@ -32,4 +37,4 @@ function TrayComponent({ filterAvailable = true, title, progressBar, style, disp
         </div>
     )
 }
-export default TrayComponent
+export default TrayComponent;

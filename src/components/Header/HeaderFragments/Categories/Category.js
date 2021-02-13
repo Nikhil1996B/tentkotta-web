@@ -20,7 +20,7 @@ export default function Category() {
                             }
                         </style>
                         <Nav className={`mr-auto ${themename}-category`} style={{ display: `${pathOr('', ['md'])(breakpoint) ? 'none' : ''}` }}>
-                            <Nav.Link href="/?movies" style={CategoryStyle(pathOr(['style'])(category), breakpoint)}>
+                            <Nav.Link href="/?movies" style={CategoryStyle(pathOr(['style'])(category), breakpoint)} className={"mr-3"}>
                                 Movies
                         </Nav.Link >
                             <Nav.Link href="/?web-series" style={CategoryStyle(pathOr(['style'])(category), breakpoint)}>
