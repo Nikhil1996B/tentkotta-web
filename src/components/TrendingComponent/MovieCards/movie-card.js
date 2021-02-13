@@ -23,14 +23,9 @@ export default function MovieCard({ url = 'https://via.placeholder.com/150', bre
                     }}
                     sm={12}
                     lg={6}>
-                    <Row style={{ ...CardContainer.bottomLeft() }} >
-                        <Row>
-                            {firstItem && firstItem.release_date && firstItem.release_date}
-                        </Row>
-                        <Row>
-                            {firstItem && firstItem.original_title && firstItem.original_title}
-                        </Row>
-                    </Row>
+                    <div style={{ ...CardContainer.bottomLeft() }} >
+                        {firstItem && firstItem.original_title && firstItem.original_title}
+                    </div>
                     <div style={{ ...CardContainer.bottomright() }} >
                         {firstItem && firstItem.original_title && firstItem.original_title}
                     </div>
