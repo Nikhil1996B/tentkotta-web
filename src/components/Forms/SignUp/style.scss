@@ -1,0 +1,31 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../../common-styles/variables";
+
+@import "../SignIn/style.scss";
+
+.stepHeader {
+    .step-indicator {
+        letter-spacing: 0.07px;
+        color: #585858;
+        opacity: 1;
+    }
+    p {
+        text-align: left;
+        font: normal normal normal 19px/23px Inter;
+        letter-spacing: 0.19px;
+        color: #585858;
+    }
+    h1 {
+        color: var(--unnamed-color-585858);
+        text-align: left;
+        font: normal normal bold 28px/34px Inter;
+        letter-spacing: 0.28px;
+        color: #585858;
+        opacity: 1;
+    }
+}
+.upgrade {
+    background: transparent !important;
+}

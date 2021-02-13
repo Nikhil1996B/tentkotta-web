@@ -5,19 +5,35 @@
 
 .search-background {
     // background: url("./../../assets/graphics/background-layout.png") no-repeat center center/cover;
-    background-color: black;
-    width: 100% !important;
+    background-color: #131722;
+    // width: 100% !important;
     min-height: 100vh !important;
     .movie-card-text {
         bottom: auto;
     }
     .headerShadow {
         position: relative;
+        background: black;
+    }
+
+    .movie-list-grid {
+        .movie-card {
+            width: 148px;
+            height: 196px;
+        }
+        li {
+            width: 16%;
+        }
+    }
+    .upgrade {
+        background: transparent linear-gradient(180deg, #ffbb3b 0%, #ffa90a 100%) 0% 0% no-repeat;
     }
 }
 
 @media screen and (max-width: $small-below) {
-    .movie-list-grid li {
-        width: 40%;
+    .search-background {
+        .movie-list-grid li {
+            width: 50%;
+        }
     }
 }

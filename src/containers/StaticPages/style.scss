@@ -1,0 +1,30 @@
+.staticpage-background {
+    // background: url("./../../assets/graphics/background-layout.png") no-repeat center center/cover;
+    // background-color: #131722;
+    width: 100% !important;
+    min-height: 100vh !important;
+    .headerShadow {
+        position: relative;
+    }
+    .container {
+        margin: auto;
+        width: 80%;
+        margin: 4% 8%;
+        background-color: white;
+        color: black;
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        div {
+            color: black;
+        }
+    }
+}
+body {
+    height: auto;
+}
+.my-anchor-css-class {
+    color: rgba(0, 0, 255, 0.795);
+}

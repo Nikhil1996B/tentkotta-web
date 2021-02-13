@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Home from '../Carosal/Home';
-import { getByGenrer } from '../Carosal/api/Movies';
+import Home from '../Carousel/Home';
+import { getByGenrer } from '../Carousel/api/Movies';
 import { useMediaQuery } from '../../components/Header/viewportHook';
 
 require('./style.scss')
 
-function TrayComponentText({ filterAvailable = false, title }) {
+function TrayComponentText({ filterAvailable = false, title, progressBar, disPlayContent, viewAll = false, redirecturl }) {
+
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
 
@@ -17,23 +18,33 @@ function TrayComponentText({ filterAvailable = false, title }) {
 
     return (
         <div>
-            <div className="trayInfoWrapper" id="#trayinfo">
-                <div className="content-section">
+            <section className="trayInfoWrapper" id="#trayinfo">
+                <aside className="content-section">
                     <hr style={{ width: '20%', position: 'absolute' }} />
-                    <h1>Popular movies to watch now</h1>
-                    <p>Most watched movies by day</p>
-                    <hr />
-                    <p><a href="#trayinfo">View all</a></p>
-                </div>
+                    {
+                        disPlayContent && disPlayContent.header && <h1 className={'textSplitter'}>
+                            {disPlayContent.header}
+                        </h1>
+                    }
+                    {disPlayContent && disPlayContent.content && <p>{disPlayContent.content}</p>}
+                    {
+                        viewAll ? <>
+                            <hr />
+                            <p><a href="#trayinfo">View all &nbsp; <span>&#62;</span></a></p>
+                        </> : null
+                    }
+                </aside>
                 <div className="popular-movies-mob">Popular movies to watch</div>
-                <div className="slider-width">
+                <aside className="slider-width">
                     <Home
+                        progressBar={progressBar}
                         movies={movies}
                         title={title}
-                        displayCard={3}
+                        displayCard={display ? 3 : 5}
+                        redirecturl={redirecturl}
                     />
-                </div>
-            </div>
+                </aside>
+            </section>
         </div>
     )
 }

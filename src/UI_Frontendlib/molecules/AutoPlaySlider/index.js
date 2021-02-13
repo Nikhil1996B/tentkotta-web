@@ -8,6 +8,7 @@ import imageLogo from './images/imageLogo.png'
 
 require('./style.scss')
 
+
 export class AutoPlaySlider extends Component {
     render() {
         const settings = this.props

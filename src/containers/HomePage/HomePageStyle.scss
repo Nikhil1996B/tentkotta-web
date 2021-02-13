@@ -4,10 +4,22 @@
 @import "../../common-styles/variables";
 
 .home-background {
-  background: url("./../../assets/graphics/background-layout.png") no-repeat center center/cover;
-  background-color: #131722;
-  width: 100% !important;
-  min-height: 100vh !important;
+  // background: url("./../../assets/graphics/background-layout.png") no-repeat center center/cover;
+  // background-color: #131722;
+  // width: 100% !important;
+  // min-height: 100vh !important;
+  // .headerShadow {
+  //   // Sabackground: transparent linear-gradient(180deg, #00000096 0%, #0000001a 100%) 0% 0% no-repeat padding-box;
+  //   position: relative;
+  // }
+  // .upgrade {
+  //   font-family: GothamLight;
+  //   background: #e1540f !important;
+  // }
+}
+body {
+  height: initial !important;
+  background: #131722 !important;
 }
 
 .modal-back {
@@ -303,7 +315,35 @@ h2 span {
   -webkit-filter: invert(100%);
 }
 
+.trending-movies-container {
+  margin: 0 0 10% 0;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .horzontalTray {
+    margin-top: 10%;
+  }
+}
+
 @media screen and (max-width: $small-below) {
+  .horizontalTray {
+    margin-top: 91%;
+  }
+  .trending-movies-container {
+    // margin: 0 0 170% 0;
+  }
+  .horzontalTray {
+    margin-top: 90%;
+  }
+  .left-section {
+    min-height: 24vh;
+  }
+  .right-section .sub-section {
+    height: 24vh;
+  }
+  .bottom-marg {
+    margin-bottom: 4%;
+  }
   .autopaly-container {
     border-radius: 12px;
     margin-left: 71px;
@@ -333,5 +373,11 @@ h2 span {
   .slick-next,
   .slick-next {
     display: none !important;
+  }
+}
+
+@media only screen and (device-width: 768px) {
+  .horizontalTray {
+    margin-top: 25%;
   }
 }

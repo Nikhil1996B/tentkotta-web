@@ -1,0 +1,147 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+@import "../../../common-styles/variables";
+@import "../../../common-styles/theme-selectors/tentkotta-webapp.scss";
+
+.mediaHoverImg {
+  height: 152px;
+  min-width: 39vh;
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
+  z-index: 7;
+  background: #131722 0% 0% no-repeat padding-box;
+  box-shadow: -1px 1px 9px 3px #362f2f;
+  background-position: 80% 80%;
+  margin-top: 9%;
+}
+.hoverScreen {
+  position: relative;
+  right: 2%;
+  // left: -4%;
+  color: white;
+  border-radius: 2%;
+  min-height: 46vh;
+  min-width: 39vh;
+  background: #131722 0% 0% no-repeat padding-box;
+  box-shadow: -1px 5px 9px 6px #362f2f;
+  transform: scale(1.1);
+  transition-property: transform;
+  transition-delay: 2ms;
+  transition-duration: 3s;
+  opacity: 1;
+  z-index: 7;
+  border-radius: 5%;
+  text-decoration: none;
+}
+.hoverData {
+  font: normal normal normal 16px GothamLight;
+  letter-spacing: var(--tentkotta-character-spacing-0);
+  color: var(--tentkotta-color-ffffff);
+  position: relative;
+  padding: 30px 30px 0 30px;
+  padding-left: 4%;
+  margin-top: -45px;
+  z-index: 6;
+  text-decoration: none;
+}
+.playButton {
+  color: white;
+  // margin-top: 50%;
+  transform: scale(1.3);
+}
+.playButton:hover {
+  background-color: #e1540f;
+  padding: 39%;
+  border-radius: 50%;
+  outline: none;
+}
+.playtext {
+  text-decoration: none;
+  margin-top: 30%;
+  font-size: 14px;
+  margin-left: 100%;
+  text-align: left;
+  font: normal normal medium 21px/40px Inter;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+.playDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.playIcon {
+  display: flex;
+}
+.displayleft {
+  margin-left: 80%;
+}
+.playIcon,
+.imgsize {
+  width: 11px;
+}
+.addIcon {
+  color: white;
+}
+.subtitle {
+  margin-left: 4%;
+  margin-right: 2%;
+  img {
+    margin-top:2%;
+    width: 18px;
+  }
+}
+.hoverHeading {
+  margin-top: 8%;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+.hovertitle {
+  font: normal normal normal 21px GothamLight;
+  letter-spacing: var(--tentkotta-character-spacing-0);
+  color: var(--tentkotta-color-ffffff);
+  margin-top: 4%;
+  text-align: left;
+  font-weight: 700;
+  padding: 2% 0;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+}
+.overview {
+  text-align: left;
+  margin-top: 5px;
+  font-size: 10px;
+  text-decoration: none;
+}
+.releaseYear {
+  font-size: 10px;
+
+  color: var(--tentkotta-color-ffffff);
+  color: gray;
+  margin-bottom: 15px;
+}
+.runTime {
+  color: darkgray;
+  font-size: 10px;
+}
+.footerScreen {
+  margin-top: 8%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footerSection div {
+  margin-right: 10%;
+}
+
+.messageIcon {
+  color: darkgray;
+  max-height: 18px;
+}
+.rated {
+  color: darkgray;
+  font-size: 9px;
+  height: 10px;
+}

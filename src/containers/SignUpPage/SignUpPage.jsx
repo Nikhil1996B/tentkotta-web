@@ -1,6 +1,7 @@
 import React,{ useState } from "react";
 import "./SignUpStyle.scss";
-import Modal from 'react-bootstrap/Modal'
+import Modal from 'react-bootstrap/Modal';
+
 
 
 function SignUpPage() {

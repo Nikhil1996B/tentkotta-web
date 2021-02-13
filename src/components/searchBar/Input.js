@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import searchicon from './assets/search-icon2.png'
+import searchicon from './assets/search-icon.png';
+import search from './assets/search.svg'
 require('./style.scss');
 
 
@@ -56,6 +57,12 @@ class Input extends Component {
     if (event.key === 'Enter' && this.state.query) {
       this.props.onEnterPressed(this.state.query)
     }
+  };
+
+  handleSearchIconClick = () => {
+    if (this.state.query) {
+      this.props.onEnterPressed(this.state.query);
+    }
   }
 
   render() {
@@ -71,10 +78,12 @@ class Input extends Component {
         >
           <div className="navbar-input">
             <img
-              src={this.props.searchIcon ? this.props.searchIcon : searchicon}
+              src={search}
+              // src={this.props.searchIcon ? this.props.searchIcon : searchicon}
               aria-hidden="true"
-              onClick={this.openInputHandler}
-              style={{ cursor: this.state.cursor, width: '29px' }}
+              onClick={this.handleSearchIconClick}
+              style={{ cursor: this.state.cursor }}
+              alt="search content"
             ></img>
             <input
               type="text"

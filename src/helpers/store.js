@@ -5,9 +5,9 @@ import rootReducer from "../reducers";
 
 export const middleWares = [thunkMiddleware];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const loggerMiddleware = createLogger();
+// const loggerMiddleware = createLogger();
 
-export const createStoreWithMiddleware = composeEnhancers(applyMiddleware(...middleWares, loggerMiddleware))(createStore)
+export const createStoreWithMiddleware = composeEnhancers(applyMiddleware(...middleWares))(createStore)
 
 
 // convert object to string and store in localStorage
@@ -15,7 +15,6 @@ function saveToLocalStorage(state) {
     try {
         const serialisedState = JSON.stringify(state);
         sessionStorage.setItem("persistantState", serialisedState);
-
     } catch (e) {
         console.warn(e);
     }

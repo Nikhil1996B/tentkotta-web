@@ -1,0 +1,104 @@
+/* Normalize */
+@import "~normalize-scss/sass/normalize";
+
+@import "../../../common-styles/variables";
+@import "../../Forms/SignIn/style.scss";
+
+.payment-background {
+    width: 100% !important;
+    min-height: 100vh !important;
+    .headerShadow {
+        position: relative;
+    }
+    .upgrade {
+        padding: 0;
+    }
+    .simpleContainer {
+        p {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
+                var(--tentkotta-font-size-15) / var(--tentkotta-line-spacing-19) var(--tentkotta-font-family-inter);
+            letter-spacing: var(--tentkotta-character-spacing-0-07);
+            color: var(--tentkotta-color-585858);
+        }
+        h2 {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold)
+                var(--tentkotta-font-size-28) / var(--tentkotta-line-spacing-34) var(--tentkotta-font-family-inter);
+            letter-spacing: var(--tentkotta-character-spacing-0-28);
+            color: var(--tentkotta-color-585858);
+            text-align: left;
+            border: none;
+            width: 100%;
+            margin: 1% 0 2% 0;
+        }
+    }
+}
+.regFormContainer .promobtn button {
+    background: #e1540f;
+    height: 40px;
+    margin: 1% 1%;
+    span {
+        color: white;
+    }
+}
+
+.price-section {
+    background: #f4f4f4 0% 0% no-repeat padding-box;
+    display: flex;
+    font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) var(--tentkotta-font-size-15) /
+        var(--tentkotta-line-spacing-19) var(--tentkotta-font-family-inter);
+    letter-spacing: var(--tentkotta-character-spacing-0-07);
+    color: var(--tentkotta-color-585858);
+    margin-bottom: 4%;
+    .price-left-section {
+        margin: 2%;
+        div {
+            padding: 8% 0;
+        }
+    }
+    .price-right-section {
+        position: relative;
+        right: -62%;
+        margin-top: 6%;
+        color: #e1540f;
+    }
+}
+
+.card-price-section {
+    display: flex;
+    background: #e1540f 0% 0% no-repeat padding-box;
+    height: 40px;
+    border: none;
+    border-radius: 0.2rem;
+    .card-left-section {
+        text-align: left;
+        font: normal normal normal 15px/19px Inter;
+        letter-spacing: 0.15px;
+        font: normal normal normal 15px/19px Inter;
+        color: #ffffff;
+        margin: 2%;
+    }
+    .card-right-section {
+        position: relative;
+        color: #ffffff;
+        font: normal normal normal 15px/19px Inter;
+        font-size: 24px;
+        right: -50%;
+        padding-top: 2%;
+    }
+}
+
+.emphasise {
+    font: normal normal bold 19px/23px Inter;
+    letter-spacing: 0.19px;
+    color: #585858;
+}
+.gutter-padd {
+    padding-right: 10%;
+    line-height: 24px;
+}
+
+@media screen and (max-width: $small-below) {
+    .promobtn input {
+        width: 100%;
+    }
+}

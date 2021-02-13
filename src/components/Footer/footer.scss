@@ -2,34 +2,57 @@
 
 @import "../../common-styles/variables";
 
+@import "../../common-styles/theme-selectors/tentkotta-webapp.scss";
+
 .footer,
 .footer a {
-    color: #999;
-    font-size: 0.9rem;
+    font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) 16px /
+        var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
+    letter-spacing: var(--tentkotta-character-spacing-0);
+    color: var(--tentkotta-color-949cb0);
 }
 
 .callus {
-    padding-left: 30px;
+    padding-left: 1%;
 }
 
 .footer {
-    padding: 40px;
-    border-top: 5px solid;
-    margin-top: 54px;
-    padding-top: 24px;
+    padding: 14px 40px;
+    border-top: 1px solid;
 }
 
-.footer p {
-    margin-bottom: 1.5rem;
+.footer {
+    ul {
+        li {
+            p {
+                margin-bottom: 0.5rem;
+                font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-medium)
+                    var(--tentkotta-font-size-18) / var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
+                letter-spacing: var(--tentkotta-character-spacing-0);
+                color: var(--tentkotta-color-ffffff);
+            }
+        }
+    }
+    .icons {
+        padding-top: 20px;
+        span {
+            // margin: 0 8px;
+            // min-height: 40%;
+            // background-color: var(--tentkotta-color-949cb0);
+            // padding: 8px;
+            // border-radius: 2px;
+        }
+    }
 }
 
 .footer .footer-cols {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 5rem;
 }
 
 .footer li {
+    list-style-type: none;
     line-height: 1.9;
 }
 
@@ -46,12 +69,18 @@
 @media screen and (max-width: $small-below) {
     .footer .footer-cols {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1px;
     }
     .footer {
         padding: 10px;
     }
     .callus {
-        padding-left: 10px;
+        padding-left: 8px;
+    }
+    .footer-cols {
+        ul {
+            margin-right: 0px;
+        }
     }
 }

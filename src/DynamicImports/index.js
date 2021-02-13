@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';  
 
 export class DynamicImport extends Component {
     state = {
@@ -20,4 +20,4 @@ export class DynamicImport extends Component {
     }
 }
 
-export default DynamicImport
+export default DynamicImport;

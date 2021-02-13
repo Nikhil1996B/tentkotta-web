@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Home from '../Carosal/Home';
-import { getByGenrer } from '../Carosal/api/Movies';
+import Home from '../Carousel/Home';
+import { getByGenrer } from '../Carousel/api/Movies';
 import { useMediaQuery } from '../../components/Header/viewportHook';
 
 require('./style.scss')
 
-function TrayComponent({ filterAvailable = true, title, progressBar, style, displayTextOnCard }) {
+function TrayComponent({ filterAvailable = true, title, progressBar, style, displayTextOnCard, displayHoverState, redirecturl }) {
 
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
@@ -21,11 +21,12 @@ function TrayComponent({ filterAvailable = true, title, progressBar, style, disp
             <div className="tray-wrapper">
                 <Home
                     displayTextOnCard={displayTextOnCard}
-                    style={style}
                     movies={movies}
                     title={title}
                     displayCard={display ? 3 : 5}
                     progressBar={progressBar}
+                    displayHoverState={displayHoverState}
+                    redirecturl={redirecturl}
                 />
             </div>
         </div>

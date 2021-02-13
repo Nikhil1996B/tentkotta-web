@@ -1,39 +1,71 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import pathOr from "ramda/src/pathOr";
+import facebookimg from './assets/facebook.svg';
+import instagram from './assets/instagram.svg';
+import twittersign from './assets/twitter-sign.svg';
 
-require('./footer.scss')
+require('./footer.scss');
 
 function Footer() {
+    // Sector for themes
+    const themes = useSelector(state => state.ThemeReducer)
+
+    // header layout
+    const headerLayout = pathOr({}, ['layout', 'header'], themes)
+
+
+    // logo - currying technique
+    const facebook = pathOr('', ['icons', 'facebook'])(themes)
+    const google = pathOr('', ['icons', 'google'])(themes)
     return (
         <footer className="footer" id="footer">
-            <p className="callus">Questions? Call +91-XX6-579-XXX</p>
-            <div className="footer-cols">
+            <nav className="footer-cols" aria-label="Footer navigation links">
                 <ul>
+                    <li><p>Quick Links</p></li>
+                    <li><a href="/terms-of-use">Terms of Use</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/about">About Us</a></li>
                     <li><a href="#footer">FAQ</a></li>
-                    <li><a href="#footer">Investor Relations</a></li>
-                    <li><a href="#footer">Ways To Watch</a></li>
-                    <li><a href="#footer">Corporate Information</a></li>
-                    <li><a href="#footer">Originals</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#footer">Help Center</a></li>
-                    <li><a href="#footer">Terms Of Use</a></li>
-                    <li><a href="#footer">Contact Us</a></li>
+                    <li>
+                        <a href="#footer">
+                            <p>Support (24X7)</p>
+                        </a>
+                    </li>
+                    <li>Write us : support@tentkotta.com</li>
+                    <li>Call us : 1-425-947-3022</li>
                 </ul>
                 <ul>
-                    <li><a href="#footer">Account</a></li>
-                    <li><a href="#footer">Redeem Gift Cards</a></li>
-                    <li><a href="#footer">Privacy</a></li>
-                    <li><a href="#footer">Speed Test</a></li>
+                    <li>
+                        <p className="icons">
+                            <span>
+                                <img src={facebookimg} alt="visit our facebook page" style={{
+                                    width: '46px',
+                                    height: '46px',
+                                    marginRight: '4%'
+                                }} />
+                            </span>
+                            <span> <img src={instagram} alt="visit our instagram page" style={{
+                                width: '46px',
+                                height: '46px',
+                                marginRight: '4%'
+
+                            }} /></span>
+                            <span> <img src={twittersign} alt="visit our twitter page" style={{
+                                width: '46px',
+                                height: '46px',
+                                marginRight: '4%'
+
+                            }} /></span>
+                        </p>
+                    </li>
                 </ul>
-                <ul>
-                    <li><a href="#footer">Media Center</a></li>
-                    <li><a href="#footer">Buy Gift Cards</a></li>
-                    <li><a href="#footer">Cookie Preferences</a></li>
-                    <li><a href="#footer">Legal Notices</a></li>
-                </ul>
-            </div>
+            </nav>
+            <p className="callus">Copyright 2021 @ Tentkotta</p>
         </footer>
     )
 }
 
-export default Footer
+export default Footer;

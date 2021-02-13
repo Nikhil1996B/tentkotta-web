@@ -3,7 +3,7 @@ import bbd from "./images/bbd.jpg"
 
 function VideoPreview({ config, videoConfigStyle, displayposter = false, id }) {
 
-    const [enableAutoPlayDelay, setAutoPlayinterval] = useState(false);
+    const [enableAutoPlayDelay, setAutoPlayinterval] = useState(true);
 
     const stopMovie = (e) => {
         console.log('off');
@@ -14,18 +14,20 @@ function VideoPreview({ config, videoConfigStyle, displayposter = false, id }) {
     }
 
     useEffect(() => {
+        setAutoPlayinterval(true);
+        let timer;
         if (enableAutoPlayDelay) {
-            setTimeout(function () {
+            timer = setTimeout(function () {
                 document.getElementById("playideo").play();
             }, 5000);
         }
         return () => {
-
+            clearTimeout(timer)
         }
     }, [])
 
     const defaultStyle = {
-        position: "absolute",
+        // position: "absolute",
         width: "100%",
         left: "50%",
         top: "50%",
@@ -39,11 +41,14 @@ function VideoPreview({ config, videoConfigStyle, displayposter = false, id }) {
             autoPlay
             // onMouseOver={(e) => e.target.play()}
             loop
+            controls
             muted
             // onMouseOut={(e) => e.target.pause()}
             style={videoConfigStyle ? { ...videoConfigStyle } : { ...defaultStyle }}
             id={id ? id : "playideo"}
         >
+            <source src="x" type="video/x" />
+            <source src="x" type="x" />
             <source src={config.url ? config.url :
                 "https://giant.gfycat.com/VerifiableTerrificHind.mp4"}
                 type="video/mp4" />

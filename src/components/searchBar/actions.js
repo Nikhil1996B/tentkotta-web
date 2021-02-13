@@ -1,4 +1,4 @@
-import * as Movies from '../Carosal/api/Movies';
+import * as Movies from '../Carousel/api/Movies';
 
 export const types = {
     GET_SEARCH_MOVIES: 'GET_SEARCH_MOVIES',

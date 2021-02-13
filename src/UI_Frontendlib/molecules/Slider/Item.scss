@@ -8,7 +8,7 @@
 .item {
   flex: inherit;
   transition: transform 300ms ease 100ms;
-  margin: 0 18px;
+  margin: 0 12px;
   position: relative;
 
   img {
@@ -16,6 +16,7 @@
     width: 165px;
     height: 205px;
     vertical-align: top;
+    max-width: initial;
   }
 }
 .title {
@@ -27,7 +28,7 @@
 }
 
 .slider-cover {
-  // margin: 0 0 0 80px;
+  margin: 0 0 0 80px;
 }
 
 .info {
@@ -40,16 +41,9 @@
 
 @media screen and (max-width: $small-below) {
   .slider-cover {
-    // margin: 0 0 0 45px;
+    margin: 0 0 0 45px;
   }
   .carosal-title {
     padding: 0 72px 0 75px;
   }
-  // .item {
-  //   img {
-  //     top: 1086px;
-  //     width: 94px;
-  //     height: 149px;
-  //   }
-  // }
 }

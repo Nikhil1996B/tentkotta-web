@@ -14,8 +14,6 @@ import devicesLogo from "../../assets/images/devices.svg";
 
 function FullSideNav(props) {
   //this.setState({show:props.show})
-
-
   const logo = props.themes ? props.themes.logoImg : ''
   const companyName = props.theme ? props.themes.companyName : ''
   return (

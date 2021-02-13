@@ -1,0 +1,265 @@
+@import "~normalize-scss/sass/normalize";
+@import "../../common-styles/variables";
+@import "../../common-styles/theme-selectors/tentkotta-webapp.scss";
+
+body {
+    height: 120%;
+}
+body {
+    background: white !important;
+}
+
+.membership-background {
+    width: 100% !important;
+    min-height: 100vh !important;
+    .headerShadow {
+        position: relative;
+        background: transparent linear-gradient(180deg, #e1540f 0%, #fbb08b 100%) 0% 0% no-repeat padding-box;
+    }
+
+    .container {
+        padding: 8px;
+        width: auto;
+        margin-top: 2%;
+        margin-left: 10%;
+        margin-right: 10%;
+        margin-bottom: 2%;
+        min-height: 80vh;
+    }
+
+    p {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
+            var(--tentkotta-font-size-15) / var(--tentkotta-line-spacing-19) var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0-07);
+        color: var(--tentkotta-color-585858);
+        border: none;
+        margin: 6px;
+    }
+    h2 {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) var(--tentkotta-font-size-28) /
+            var(--tentkotta-line-spacing-34) var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0-28);
+        color: var(--tentkotta-color-585858);
+        text-align: left;
+        border: none;
+        width: 100%;
+        margin: 1% 0 2% 0;
+    }
+
+    .card-container {
+        border: 1px solid lightgrey;
+        .cards:hover {
+            background: #f9f4f3;
+            .card-button {
+                display: initial;
+            }
+        }
+        // .cards:nth-of-type(2) {
+        //     background: #eef1ff;
+        // }
+        // .cards:nth-of-type(3) {
+        //     background: #eefbff;
+        // }
+        // .cards:nth-of-type(4) {
+        //     background: #e1f2ec;
+        // }
+    }
+
+    .card-container {
+        display: flex;
+        min-height: 45vh;
+        text-align: center;
+        margin-top: 4%;
+        .cards {
+            width: 25%;
+            min-height: 40vh;
+            p {
+                text-align: center;
+            }
+            .card-title {
+                margin-top: 26%;
+                font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
+                    var(--tentkotta-font-size-30) / var(--tentkotta-line-spacing-36) var(--tentkotta-font-family-inter);
+                color: var(--tentkotta-color-585858);
+            }
+            .card-text {
+                font: var(--tentkotta-font-style-normal) normal 300 var(--tentkotta-font-size-12) / 15px
+                    var(--tentkotta-font-family-inter);
+                color: var(--tentkotta-color-585858);
+                margin: 8%;
+            }
+            .card-price {
+                font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
+                    var(--tentkotta-font-size-30) / var(--tentkotta-line-spacing-36) var(--tentkotta-font-family-inter);
+                color: var(--tentkotta-color-585858);
+                .currency {
+                    font: var(--tentkotta-font-style-normal) normal 300 var(--tentkotta-font-size-15) /
+                        var(--tentkotta-line-spacing-19) var(--tentkotta-font-family-inter);
+                    letter-spacing: var(--tentkotta-character-spacing-0-15);
+                    color: var(--tentkotta-color-585858);
+                }
+            }
+            .card-button {
+                display: none;
+                background: var(--tentkotta-color-e1540f) 0% 0% no-repeat padding-box;
+                background: #e1540f 0% 0% no-repeat padding-box;
+                text-transform: uppercase;
+                border: none;
+                font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold)
+                    var(--tentkotta-font-size-14) / var(--tentkotta-line-spacing-17) var(--tentkotta-font-family-inter);
+                letter-spacing: var(--tentkotta-character-spacing-0-14);
+                text-align: center;
+                padding: 4% 18%;
+                border-radius: 2.8%;
+            }
+        }
+    }
+}
+.footer {
+    background: #131722;
+}
+
+.checkmark-group--icon {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+    color: #e50914;
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -moz-box-flex: 0;
+    -ms-flex: none;
+    flex: none;
+    height: 18px;
+    width: 18px;
+}
+.checkmark-group--text {
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+.active {
+    // background: #fbb08b !important;
+}
+
+@media screen and (max-width: $small-below) {
+    .membership-background {
+        h2 {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold)
+                var(--tentkotta-font-size-14) / var(--tentkotta-line-spacing-17) var(--tentkotta-font-family-inter);
+        }
+        p {
+            font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) 10px/12px
+                var(--tentkotta-font-family-inter);
+            color: var(--tentkotta-color-585858);
+        }
+        .card-container {
+            display: initial;
+            border: none;
+            .card:hover {
+                background-color: #e2e2e2;
+            }
+            .cards {
+                width: 100%;
+                display: flex;
+                min-height: auto;
+                padding: 2%;
+                background-color: #f9f4f3;
+                margin: 4% 0;
+                .card-button {
+                    display: none !important;
+                }
+                .rightsection {
+                    width: 60%;
+                }
+                .leftsection {
+                    width: 40%;
+                }
+                .card-title {
+                    margin-top: 0;
+                    font: normal normal bold 15px/19px Inter;
+                    letter-spacing: 0.15px;
+                    color: #e1540f;
+                    text-align: left;
+                }
+                .card-text {
+                    text-align: left;
+                    margin: 2%;
+                    font: normal normal 300 10px/12px Inter;
+                    letter-spacing: 0.1px;
+                }
+                .card-price {
+                    .main {
+                        text-align: center;
+                        font: normal normal normal 25px/30px Inter;
+                        letter-spacing: 0.25px;
+                        color: #585858;
+                    }
+                }
+            }
+        
+            // min-height: 38vh;
+            // .cards:nth-of-type(1),
+            // .cards:nth-of-type(2),
+            // .cards:nth-of-type(3),
+            // .cards:nth-of-type(4) {
+            //     background: white;
+            // }
+            // .cards {
+            //     min-height: 20vh;
+            //     .card-button {
+            //         font-size: 6px;
+            //         background: white;
+            //         color: #e1540f;
+            //         border: 1px solid #e1540f;
+            //         padding: 4%;
+            //     }
+            //     .card-price {
+            //         .currency {
+            //             font-size: 6px;
+            //         }
+            //     }
+            //     .card-title {
+            //         min-height: 20%;
+            //         text-align: center;
+            //         top: 10%;
+            //         background: #e1540f;
+            //         span {
+            //             position: relative;
+            //             top: 3vh;
+            //             color: white;
+            //         }
+            //     }
+            //     .card-title,
+            //     .card-text,
+            //     .main {
+            //         font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-bold) 10px/12px
+            //             var(--tentkotta-font-family-inter);
+            //     }
+            //     .card-text {
+            //         display: none;
+            //     }
+            // }
+        }
+    }
+    .checkmark-group--icon {
+        height: 11px;
+        width: 11px;
+    }
+}
+
+/* ----------- iPad Pro" ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+    body {
+        height: 100%;
+    }
+    .membership-background {
+        .card-container {
+            min-height: 24vh;
+            .cards {
+                min-height: 22vh;
+            }
+        }
+    }
+}

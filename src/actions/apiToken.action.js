@@ -16,7 +16,7 @@ function login(username, password) {
     apiTokenService.login(username, password).then(
       (user) => {
         dispatch(success(user));
-        dispatch(themeActions.themes())
+        dispatch(themeActions.themes());
       },
       (error) => {
         dispatch(failure(error.toString()));
@@ -24,8 +24,6 @@ function login(username, password) {
       }
     );
   };
-
-
 
 
   function request(user) {

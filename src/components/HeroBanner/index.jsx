@@ -105,7 +105,7 @@ export class HeroBanner extends Component {
                             ></img>
                             <br />
                             <span>
-                                watch later
+                                Download
                         </span>
                         </div>
                     </a>
@@ -123,7 +123,7 @@ export class HeroBanner extends Component {
             precision: 0.5,
             readOnly: true,
             classname: null,
-            icon: this.props.themes ? this.props.themes.icons.rating : ''
+            icon: this.props.themes && this.props.themes.icons ? this.props.themes.icons.rating : ''
         };
         const fetch = () => {
             // Initiate fetch action

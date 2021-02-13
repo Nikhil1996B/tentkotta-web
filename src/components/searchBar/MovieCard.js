@@ -1,2 +1,2 @@
 
-export { MovieCard } from '../Carosal/MovieCard';
+export { MovieCard } from '../Carousel/MovieCard';

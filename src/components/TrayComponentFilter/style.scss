@@ -2,30 +2,43 @@
 @import "~normalize-scss/sass/normalize";
 
 @import "../../common-styles/variables";
+@import "../../common-styles/theme-selectors/tentkotta-webapp.scss";
 
 .carousalWrapper {
     width: 100%;
     .filter {
-        position: absolute;
+        // position: absolute;
         margin-right: 18px;
         // width: 47%;
+        display: flex;
         right: 0;
         ul {
             display: flex;
             li {
                 list-style-type: none;
                 text-emphasis: none;
-                margin: 10px 55px;
+                margin: 10px 15px;
                 a:hover {
-                    color: white;
+                    font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
+                        var(--tentkotta-font-size-14) / var(--tentkotta-line-spacing-38)
+                        var(--tentkotta-font-family-inter);
+                    color: var(--tentkotta-color-ff8b53);
                 }
                 a {
                     font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal)
                         var(--tentkotta-font-size-14) / var(--tentkotta-line-spacing-38)
                         var(--tentkotta-font-family-inter);
-                    color: #ff8b53;
+                    color: var(--tentkotta-color-949cb0);
                 }
             }
+        }
+        hr {
+            height: 0;
+            margin-top: 43px;
+            margin-right: 18px;
+        }
+        h1 {
+            margin-left: 28px;
         }
     }
 
@@ -38,31 +51,59 @@
     }
 }
 .active {
-    color: white !important;
+    background: none !important;
+    a {
+        color: var(--tentkotta-color-ff8b53) !important;
+    }
 }
 .tray-with-filter {
-    padding: 0 20px;
+    padding: 0 1rem;
+    .carousel-content > div > div > div > div > div > div:first-child {
+        height: 25vh;
+    }
+    h1 {
+        font: var(--tentkotta-font-style-normal) normal var(--tentkotta-font-weight-normal) 32px /
+            var(--tentkotta-line-spacing-38) var(--tentkotta-font-family-inter);
+        letter-spacing: var(--tentkotta-character-spacing-0);
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .carousel-title {
+        hr {
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: $small-below) {
+    .tray-with-filter {
+        padding: 0;
+    }
+
     .carousalWrapper {
         .filter {
+            h1 {
+                margin-left: 18px;
+                width: 60% !important;
+            }
             // position: relative;
             margin-top: 16px;
             width: 100%;
+            display: block;
             right: 0;
             ul {
                 li {
                     margin: 4px 14px;
                 }
             }
+            hr {
+                display: none;
+            }
         }
         .carousel-title {
             margin-bottom: 12px;
             width: auto;
-            hr {
-                display: none;
-            }
         }
     }
 }

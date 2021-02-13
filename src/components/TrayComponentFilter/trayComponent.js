@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Home from '../Carosal/Home';
-import { getByGenrer } from '../Carosal/api/Movies';
+import Home from '../Carousel/Home';
+import { getByGenrer } from '../Carousel/api/Movies';
 import { useMediaQuery } from '../../components/Header/viewportHook';
-
+import { FilterSlider } from '../TrendingComponent';
 require('./style.scss')
 
-function TrayComponentFilter({ filterAvailable = true, title }) {
+function TrayComponentFilter({ filterAvailable = true, title, redirecturl }) {
     const [movies, setMovies] = useState({ movies: [] })
     // media query display
     const display = useMediaQuery('(min-width: 768px)');
@@ -18,9 +18,12 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
 
     const genre = [
         'Drama',
-        'Sci-Fi',
+        'Sci',
         'Adventure',
         'Crime',
+        'Romance',
+        'Latest',
+        'Watch'
     ]
 
     const style = {
@@ -39,21 +42,32 @@ function TrayComponentFilter({ filterAvailable = true, title }) {
     return (
         <div className="tray-with-filter">
             <div className="carousalWrapper" id="carousal-filter">
-                {filterAvailable && <div className="filter">
-                    <ul>
-                        {genre.map((value, index) =>
-                            <li key={index} onClick={e => handleClick(value)}>
-                                <a href="#carousal-filter" className={selectedGenere == value ? isActive : ''}>
-                                    {value}
-                                </a>
-                            </li>)}
-                    </ul>
-                </div>}
+                <div className="filter">
+                    {title && <h1 style={{ width: '30%', color: 'white' }}>{title}</h1>}
+                    {title && <hr style={{ width: '40%' }} />}
+                    {filterAvailable &&
+                        <nav className="trending-listitem" style={{ width: 'auto' }}>
+                            <ul>
+                                {genre.map((value, index) =>
+                                    <li key={index} onClick={e => handleClick(value)} className={selectedGenere == value ? isActive : ''}>
+                                        <a href="#carousal-filter" >
+                                            {value}
+                                        </a>
+                                    </li>
+                                )}
+                            </ul>
+                        </nav>
+                    }
+                    {
+                        <section className="slick-slider-mobile">
+                            <FilterSlider handleClick={handleClick} selectedGenere={selectedGenere} genre={genre} isActive={isActive} />
+                        </section>
+                    }
+                </div>
                 <Home
                     movies={movies}
-                    style={style}
-                    title={title}
-                    displayCard={display ? 3 : 5}
+                    displayCard={display ? 3 : 8}
+                    redirecturl={redirecturl}
                 />
             </div>
         </div>

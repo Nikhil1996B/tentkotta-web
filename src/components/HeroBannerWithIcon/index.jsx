@@ -2,33 +2,47 @@ import React, { useState } from 'react';
 import poster from './assets/masterPoster.jpg';
 import { useSelector } from 'react-redux';
 import pathOr from "ramda/src/pathOr";
+import equals from "ramda/src/equals";
 import { Route, Redirect } from 'react-router-dom';
 import { useMediaQuery } from '../Header/viewportHook';
 import CustomizedInputBase from "./subscriptionForm";
 import VideoPreview from '../../UI_Frontendlib/molecules/previewVideoPlayer';
+import play from './assets/play.svg';
+import plus from './assets/plus.svg';
 require('./style.scss');
 
 const HeroBanner = ({ display = true }) => {
-    const [subscribed, setSubscribed] = useState(false);
-    const [movieDetails, setShowMovieDetails] = useState(true);
+    const [subscribed, setSubscribed] = useState(true);
+    const [movieDetails, setShowMovieDetails] = useState(false);
     const [moviePreviewAvailable, setPreviewAvailable] = useState(true);
     const themes = useSelector(state => state.ThemeReducer);
+    const signedInStatus = useSelector(state => pathOr('',
+        ['SignInReducer', 'signInstatus', 'responseCode'])(state));
+    const isSignedIn = equals(200, signedInStatus);
 
     const { icons } = themes
-    const playicon = pathOr('', ['playBtn'])(icons)
+    const playicon = pathOr('', ['playBtn'])(icons);
+
 
     // media query display
     const viewport = useMediaQuery('(min-width: 768px)');
 
 
+
+    // config videoautoplay
+    const [autoPlayConfig, setAutoPlayConfig] = React.useState(
+        {
+            opacity: 0
+        })
+
     // Video player config
     const config = {
-        url: "https://imdb-video.media-imdb.com/vi3183588377/1434659607842-pgv4ql-1463498780360.mp4?Expires=1611125492&Signature=MM5CBoxqQam5nO39DSPF~fUnfXN1thA-ti~LT-9JqWIw1IMjyvke8eLv1O0ISVo7bRmTz0E5U6ZqGBtMZ518HIHGVp8L7bYN01v29Jwqo151iO4IdkuLXP9Lx-ghmxgYLMu5y96cvJjyb3l~Rd-FtugkT45n6FKXIZgc9RYABE3-zht8wQU~wVEHr~QlfVTNoZLRfpr0Nytdr7niYbTDmRAm6jQB5Qs4M4dJDqmxq0UNY5vqMt0G1ltDQgkA34wQ9gnnVNv8rAF56VLQ19U~PseS9IRpxo0kJvMBxPuz6p-z7yzQTWzJX32ehwzfqheJhwTSLeFl~9o9-r0IhK5JZg__&Key-Pair-Id=APKAIFLZBVQZ24NQH3KA"
+        url: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4"
     };
     const videoConfigStyle = {
         position: 'absolute',
         right: '0',
-        bottom: viewport ? '280px' : '138px',
+        bottom: viewport ? '42%' : '7%',
         minWidth: '100%',
         minHeight: '80%',
         width: 'auto',
@@ -38,12 +52,24 @@ const HeroBanner = ({ display = true }) => {
         overflow: 'hidden'
     }
 
+    React.useEffect(() => {
+        let timer = setTimeout(function () {
+            setAutoPlayConfig({ ...autoPlayConfig, opacity: 0 })
+        }, 5000);
+        return () => {
+            clearTimeout(timer)
+        }
+    }, []);
+
 
     const handleClick = () => {
-        return window.location.pathname = '/player';
+        if (isSignedIn) {
+            return window.location.pathname = '/player';
+        }
+        return window.location.pathname = '/signIn';
     }
     return (
-        <section className="container">
+        <section className="containerwrap">
             <div className="card-overlay" />
             {
                 <>
@@ -58,7 +84,7 @@ const HeroBanner = ({ display = true }) => {
                             moviePreviewAvailable &&
                             <>
                                 <div className="hoverDiv" />
-                                <div className="info">
+                                <div style={{ ...autoPlayConfig }}>
                                     <VideoPreview videoConfigStyle={videoConfigStyle} config={config} />
                                 </div>
                             </>
@@ -66,7 +92,7 @@ const HeroBanner = ({ display = true }) => {
                         {/* <img src={poster} alt={'poster context'} /> */}
                     </div>
                     {
-                        subscribed &&
+                        subscribed && !isSignedIn &&
                         <div className={"get-subscription"}>
                             <p>
                                 get your subscription now
@@ -74,20 +100,23 @@ const HeroBanner = ({ display = true }) => {
                             <CustomizedInputBase />
                         </div>
                     }
-                    {movieDetails &&
+                    {isSignedIn &&
                         <div className="info-section">
                             <h1>PRISON BREAK S4</h1>
                             <h4>2009 | ACTION-THRILLER | 179 Minutes</h4>
                             <div className="button-section">
                                 <button className="play" onClick={() => handleClick()}>
                                     <span>
-                                        <img src={`${playicon}`} alt="play button" className="imageCont" />
+                                        <img src={`${play}`} alt="play button" className="imageCont" />
                                     </span>
                                     <span className="btnTxt">
                                         {'play'}
                                     </span>
                                 </button>
-                                <button className="addToList">+ Add to my list</button>
+                                <button className="addToList">
+                                    <img src={plus} alt="shortlist movie" style={{ height: '17px' }} />
+                                     Add to my list
+                                     </button>
                             </div>
                         </div>
                     }

@@ -22,9 +22,34 @@
 
 .movie-list-container {
     margin: 0px 20px 20px 20px;
+    .filter-btn {
+        background-color: #2f323c;
+        padding: 10%;
+    }
+    .navbar-input-container {
+        height: 90px;
+        width: 100% !important;
+        background: #f5f5f51f 0% 0% no-repeat padding-box;
+    }
+    .navbar-input {
+        width: 100%;
+    }
+    .navbar-input {
+        font: normal normal normal 25px/38px Inter;
+        letter-spacing: 0px;
+        color: #949cb0;
+        img {
+            left: 82%;
+        }
+    }
 }
-
+.movie-list-container aside nav {
+    width: 50%;
+}
 .movie-list-container h1 {
+    font: normal normal normal 25px/38px;
+    letter-spacing: 0px;
+    color: #ffffff;
     margin: 0;
 }
 
@@ -38,6 +63,9 @@
     // display: flex;
     // align-items: center;
     // border-bottom: 2px solid #141414;
+    .navbar-input-space {
+        justify-content: initial;
+    }
 }
 
 .navbar-input-space {
@@ -100,9 +128,9 @@
         position: relative;
         cursor: pointer;
         width: 20px;
-        border-radius: 50%;
+        // border-radius: 50%;
         top: 1px;
-        left: 68%;
+        left: 55%;
     }
 }
 
@@ -114,7 +142,7 @@
     background: transparent;
     border: none;
     color: #fff;
-    margin-left: 15px;
+    margin-left: -50px;
     width: 100%;
     font-size: 22px;
     -webkit-transition: opacity 0.25s ease-in-out;
@@ -143,6 +171,6 @@
         }
     }
     .navbar-input-container {
-        height: 28px;
+        height: 10%;
     }
 }

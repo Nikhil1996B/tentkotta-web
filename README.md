@@ -21,7 +21,7 @@
 - `yarn latest`
 - If you are behind proxy make sure you have proxy settings for `npm`
 ###Build
-- open terminal in  `~/phoenix-apps/commonwebitems/.../frontend` directory
+- open terminal in  `~CPASS-WEB-APP/src/` directory
 - run `yarn install` to install packages
 - run `yarn run build` to build source code
 

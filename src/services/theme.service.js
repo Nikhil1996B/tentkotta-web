@@ -1,12 +1,10 @@
 import { themeConfig } from "./config";
-import { encrypt } from "../helpers";
 import { handleResponse } from './api.service'
 export const themeService = {
     theme
 }
 
 async function theme() {
-    const pwd = await encrypt(themeConfig.apiPassword);
     const auth = localStorage.getItem("apiToken");
     const requestOptions = {
         method: "GET",
