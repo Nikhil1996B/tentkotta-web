@@ -6,11 +6,11 @@ import HoverScreen from "./HoverScreen";
 
 const CarousalState = React.createContext();
 
-const Home = ({ movies, title, style, displayCard, progressBar, displayTextOnCard, displayHoverState , redirecturl}) => {
-  const filterMovies = pathOr([], ['animationMovies'])(movies)
-  return <div className="home-container">
+const Home = ({ movies, title, style, displayCard, progressBar, displayTextOnCard, displayHoverState, redirecturl }) => {
+  const filterMovies = movies ? movies : '';
+  return (<div className="home-container">
     <Carousel title={title} style={style} displayCard={displayCard}>
-      {filterMovies.map(movie => (
+      {filterMovies && filterMovies.map(movie => (
         <MovieCard
           displayTextOnCard={displayTextOnCard}
           key={movie.id}
@@ -21,7 +21,7 @@ const Home = ({ movies, title, style, displayCard, progressBar, displayTextOnCar
         />
       ))}
     </Carousel>
-  </div>
+  </div>)
 }
 
 

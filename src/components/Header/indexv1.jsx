@@ -15,6 +15,7 @@ import { NavBarStyle } from './header-style';
 import logotent from './assets/logotent.png';
 import profile from './assets/profile.svg';
 import { signinActions } from '../Forms/SignIn/actions';
+import { HeaderGlobalStyle } from './header-style';
 
 // import react-bootstrap components
 import { Container, Row, Col, Navbar, Image } from 'react-bootstrap';
@@ -23,8 +24,8 @@ import { Container, Row, Col, Navbar, Image } from 'react-bootstrap';
 export default function HeaderComp() {
     // media query display
     const breakpoint = {
-        sm: useMediaQuery('(min-width: 576px)'),
-        md: useMediaQuery('(min-width: 768px)'),
+        sm: useMediaQuery('(max-width: 576px)'),
+        md: useMediaQuery('(max-width: 768px)'),
         lg: useMediaQuery('(min-width:1200px')
     };
 
@@ -53,7 +54,6 @@ export default function HeaderComp() {
 
     // Handle the signin/signout button click
     const handleClick = () => {
-        return console.log('called');
     }
 
     // Avatar icon click 
@@ -104,11 +104,14 @@ export default function HeaderComp() {
     }
     return (
         <HeaderContext.Provider value={HeaderContextState}>
-            <Navbar varient={"dark"} style={NavBarStyle(headerbgclr)} expand={true}>
-                <Brandlogo />
-                <Category />
-                <SearchForm />
-            </Navbar>
+            <>
+                <HeaderGlobalStyle breakpoint={breakpoint} />
+                <Navbar varient={"dark"} style={NavBarStyle(headerbgclr)} expand={true} className={'headercomp'}>
+                    <Brandlogo />
+                    <Category />
+                    <SearchForm />
+                </Navbar>
+            </>
         </HeaderContext.Provider>
     )
 }

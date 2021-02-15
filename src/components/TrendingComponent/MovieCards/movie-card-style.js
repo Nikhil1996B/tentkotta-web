@@ -1,7 +1,6 @@
 export const CardContainer = {
     colum: (bp) => ({
-        border: '1px solid grey',
-        minHeight: '40vh',
+        minHeight: '55vh',
         paddingRight: `${bp ? "0" : '2rem'}`,
         paddingLeft: `${bp ? "0" : ''}`
     }),
@@ -13,7 +12,7 @@ export const CardContainer = {
         backgroundSize: 'cover'
     }),
     smallimage: (bp) => ({
-        minHeight: '20vh',
+        minHeight: '28vh',
         margin: `${bp ? '0 0.2rem' : '0 1rem'} `
     }),
     topmargin: () => ({
@@ -32,10 +31,11 @@ export const CardContainer = {
         fontSize: `18px`,
         color: 'white'
     }),
-    bottomLeft: () => ({
+    bottomLeft: (bp) => ({
         position: `absolute`,
         bottom: `8px`,
         left: `16px`,
-        fontSize: `18px`
+        fontSize: `${bp ? '12px' : '18px'}`,
+        color: 'white'
     })
 }

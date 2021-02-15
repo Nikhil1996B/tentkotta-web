@@ -9,6 +9,7 @@ import { apiTokenActions } from "../../../actions/apiToken.action";
 import LoadingSpinner from "../../../UI_Frontendlib/atoms/loadingSpinner";
 import { rules } from '../../../helpers/rules';
 import { isSignedIn, signedIn } from '../SignIn/authentication';
+import { SignUpGlobalStyle } from './signupstyle';
 
 require('./style.scss');
 
@@ -111,180 +112,183 @@ function SignUp() {
     }
 
     return (
-        <div>
-            <div className="tentkotta-sans-font-loaded">
-                <div className="basicLayout simplicity" dir="ltr">
-                    <div className="simpleContainer">
-                        <div className="centerContainer">
-                            <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="regFormContainer">
-                                    {
-                                        error && <MessageContent>
-                                            {
-                                                error.includes('exists') && responseCode
-                                                    ? emailExistMessage(error)
-                                                    : error
-                                            }
-                                        </MessageContent>
-                                    }
+        <>
+            <SignUpGlobalStyle />
+            <div>
+                <div className="tentkotta-sans-font-loaded">
+                    <div className="basicLayout simplicity" dir="ltr">
+                        <div className="simpleContainer">
+                            <div className="centerContainer">
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <div className="regFormContainer">
+                                        {
+                                            error && <MessageContent>
+                                                {
+                                                    error.includes('exists') && responseCode
+                                                        ? emailExistMessage(error)
+                                                        : error
+                                                }
+                                            </MessageContent>
+                                        }
 
-                                    {
-                                        responseCode == 200 &&
-                                        <MessageContent>
-                                            {`Congratulations ${username}! User created successfully. Please sign In following this link`}
-                                            {" "}< a href="/signIn" onClick={() => handleSignUpSuccess()}>Sign In to your account</a>
-                                        </MessageContent>
-                                    }
+                                        {
+                                            responseCode == 200 &&
+                                            <MessageContent>
+                                                {`Congratulations ${username}! User created successfully. Please sign In following this link`}
+                                                {" "}< a href="/signIn" onClick={() => handleSignUpSuccess()}>Sign In to your account</a>
+                                            </MessageContent>
+                                        }
 
-                                    <div className="stepHeader-container">
-                                        <div className="stepHeader">
-                                            <p className="step-indicator">Step 1 of 3</p>
-                                            <h1 className="stepTitle">
-                                                Create a password to start your membership.
+                                        <div className="stepHeader-container">
+                                            <div className="stepHeader">
+                                                <p className="step-indicator">Step 1 of 3</p>
+                                                <h1 className="stepTitle">
+                                                    Create a password to start your membership.
                                             </h1>
-                                            <p>Just a few more steps and you're done! We hate paperwork, too.</p>
+                                                <p>Just a few more steps and you're done! We hate paperwork, too.</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <ul className="simpleForm structural ui-grid">
+                                                <li className="tkFormSpace">
+                                                    <div className="tkInput ">
+                                                        <div className="tkInputPlacement">
+                                                            <label
+                                                                className="input_id"
+                                                                placeholder="email"
+                                                            >
+                                                                <input
+                                                                    type="email"
+                                                                    name="email"
+                                                                    className={`tkTextField`}
+                                                                    id="id_email"
+                                                                    maxLength="50"
+                                                                    minLength="5"
+                                                                    value={inputs.email}
+                                                                    onChange={(e) => setInputs({ ...inputs, [e.target.name]: e.target.value })}
+                                                                    ref={register({
+                                                                        required: "E-mail ID is Required",
+                                                                        pattern: {
+                                                                            value: pathOr(null, ['validation', 'email'])(rules),
+                                                                            message: "invalid email address",
+                                                                        }
+                                                                    })}
+                                                                />
+                                                                {errors.email &&
+                                                                    <p
+                                                                        style={{ color: 'red', fontSize: '10px' }}>
+                                                                        {errors.email.message}
+                                                                    </p>
+                                                                }
+                                                                <label
+                                                                    htmlFor="id_email"
+                                                                    className="placeLabel">
+                                                                    Email
+                                                            </label>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li className="tkFormSpace">
+                                                    <div className="tkInput ">
+                                                        <div className="tkInputPlacement">
+                                                            <label
+                                                                className="input_id"
+                                                                placeholder="mobile number(optional)"
+                                                            >
+                                                                <input
+                                                                    type="text"
+                                                                    name="phone"
+                                                                    className={`tkTextField ${hasText ? 'hasText' : ''}`}
+                                                                    id="id_phone"
+                                                                    maxLength="50"
+                                                                    minLength="5"
+                                                                    ref={register({
+                                                                        // required: "phone number Required",
+                                                                        pattern: {
+                                                                            value: pathOr(null, ['validation', 'phoneNumber'])(rules),
+                                                                            message: "invalid phone number",
+                                                                        }
+                                                                    })}
+                                                                />
+                                                                {errors.phone &&
+                                                                    <p
+                                                                        style={{ color: 'red', fontSize: '10px' }}>
+                                                                        {errors.phone.message}
+                                                                    </p>
+                                                                }
+                                                                <label
+                                                                    htmlFor="id_phone"
+                                                                    className="placeLabel">
+                                                                    Mobile Number (Optional)
+                                                            </label>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li className="tkFormSpace">
+                                                    <div className="tkInput tkInputOversize">
+                                                        <div className="tkInputPlacement">
+                                                            <label className="input_id"
+                                                                placeholder="password"
+                                                            >
+                                                                <input
+                                                                    type="password"
+                                                                    name="password"
+                                                                    className={`tkTextField ${hasText ? 'hasText' : ''}`}
+                                                                    id="id_password"
+                                                                    autoComplete="password"
+                                                                    maxLength="61"
+                                                                    minLength="4"
+                                                                    dir=""
+                                                                    ref={register({
+                                                                        required: "password is not filled",
+                                                                        validate: value => value.length
+                                                                    })}
+                                                                />
+                                                                <label
+                                                                    htmlFor="id_password"
+                                                                    className={`placeLabel`}>
+                                                                    Password
+                                                            </label>
+                                                                {
+                                                                    errors.password &&
+                                                                    <p
+                                                                        style={{ color: 'red', fontSize: '10px' }}
+                                                                    >
+                                                                        {errors.password.message}
+                                                                    </p>
+                                                                }
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div>
-                                        <ul className="simpleForm structural ui-grid">
-                                            <li className="tkFormSpace">
-                                                <div className="tkInput ">
-                                                    <div className="tkInputPlacement">
-                                                        <label
-                                                            className="input_id"
-                                                            placeholder="email"
-                                                        >
-                                                            <input
-                                                                type="email"
-                                                                name="email"
-                                                                className={`tkTextField`}
-                                                                id="id_email"
-                                                                maxLength="50"
-                                                                minLength="5"
-                                                                value={inputs.email}
-                                                                onChange={(e) => setInputs({ ...inputs, [e.target.name]: e.target.value })}
-                                                                ref={register({
-                                                                    required: "E-mail ID is Required",
-                                                                    pattern: {
-                                                                        value: pathOr(null, ['validation', 'email'])(rules),
-                                                                        message: "invalid email address",
-                                                                    }
-                                                                })}
-                                                            />
-                                                            {errors.email &&
-                                                                <p
-                                                                    style={{ color: 'red', fontSize: '10px' }}>
-                                                                    {errors.email.message}
-                                                                </p>
-                                                            }
-                                                            <label
-                                                                htmlFor="id_email"
-                                                                className="placeLabel">
-                                                                Email
-                                                            </label>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li className="tkFormSpace">
-                                                <div className="tkInput ">
-                                                    <div className="tkInputPlacement">
-                                                        <label
-                                                            className="input_id"
-                                                            placeholder="mobile number(optional)"
-                                                        >
-                                                            <input
-                                                                type="text"
-                                                                name="phone"
-                                                                className={`tkTextField ${hasText ? 'hasText' : ''}`}
-                                                                id="id_phone"
-                                                                maxLength="50"
-                                                                minLength="5"
-                                                                ref={register({
-                                                                    // required: "phone number Required",
-                                                                    pattern: {
-                                                                        value: pathOr(null, ['validation', 'phoneNumber'])(rules),
-                                                                        message: "invalid phone number",
-                                                                    }
-                                                                })}
-                                                            />
-                                                            {errors.phone &&
-                                                                <p
-                                                                    style={{ color: 'red', fontSize: '10px' }}>
-                                                                    {errors.phone.message}
-                                                                </p>
-                                                            }
-                                                            <label
-                                                                htmlFor="id_phone"
-                                                                className="placeLabel">
-                                                                Mobile Number (Optional)
-                                                            </label>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li className="tkFormSpace">
-                                                <div className="tkInput tkInputOversize">
-                                                    <div className="tkInputPlacement">
-                                                        <label className="input_id"
-                                                            placeholder="password"
-                                                        >
-                                                            <input
-                                                                type="password"
-                                                                name="password"
-                                                                className={`tkTextField ${hasText ? 'hasText' : ''}`}
-                                                                id="id_password"
-                                                                autoComplete="password"
-                                                                maxLength="61"
-                                                                minLength="4"
-                                                                dir=""
-                                                                ref={register({
-                                                                    required: "password is not filled",
-                                                                    validate: value => value.length
-                                                                })}
-                                                            />
-                                                            <label
-                                                                htmlFor="id_password"
-                                                                className={`placeLabel`}>
-                                                                Password
-                                                            </label>
-                                                            {
-                                                                errors.password &&
-                                                                <p
-                                                                    style={{ color: 'red', fontSize: '10px' }}
-                                                                >
-                                                                    {errors.password.message}
-                                                                </p>
-                                                            }
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                    <div
+                                        className="submitBtnContainer"
+                                    >
+                                        <button
+                                            type="submit"
+                                            autoComplete="off"
+                                            className="tk-btn tk-btn-primary tk-btn-solid tk-btn-oversize"
+                                            placeholder="regForm_button_continue">
+                                            {useExists ?
+                                                'Sign Up' :
+                                                validateResponseCode()
+                                                    ? 'Choose Subscription plan'
+                                                    : `Continue`
+                                            }
+                                        </button>
                                     </div>
-                                </div>
-                                <div
-                                    className="submitBtnContainer"
-                                >
-                                    <button
-                                        type="submit"
-                                        autoComplete="off"
-                                        className="tk-btn tk-btn-primary tk-btn-solid tk-btn-oversize"
-                                        placeholder="regForm_button_continue">
-                                        {useExists ?
-                                            'Sign Up' :
-                                            validateResponseCode()
-                                                ? 'Choose Subscription plan'
-                                                : `Continue`
-                                        }
-                                    </button>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

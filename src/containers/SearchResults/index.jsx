@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { signinActions } from '../../components/Forms/SignIn/actions';
 import MainHeader from '../../components/Header';
-import ListMovies from '../../components/searchBar/ListMovies';
+import SearchResultsList from '../../components/SearchResultsList/SearchResultsList';
 import Footer from '../../components/Footer/footer';
 import pathOr from 'ramda/src/pathOr';
 import { isSignedIn, deleteCookie } from '../../components/Forms/SignIn/authentication';
@@ -26,7 +26,7 @@ export default function SearchResults() {
             dispatch(signinActions.resetSignInParams());
             deleteCookie('signInStatus');
             deleteCookie('username');
-            window.location.pathname = '/';
+            // window.location.pathname = '/';
         }
         dispatch(signinActions.resetSignInParams());
         history.push('./signIn')
@@ -39,7 +39,7 @@ export default function SearchResults() {
                     themes={themes}
                     handleSignInClick={handleSignInClick}
                     dispayBtn={isSignedIn ? false : true} />
-                <ListMovies title="Movies" />
+                <SearchResultsList title="Movies" />
             </div>
             <Footer />
         </>

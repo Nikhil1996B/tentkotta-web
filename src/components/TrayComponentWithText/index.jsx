@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { pathOr } from 'ramda';
 import Home from '../Carousel/Home';
 import { getByGenrer } from '../Carousel/api/Movies';
 import { useMediaQuery } from '../../components/Header/viewportHook';
@@ -17,13 +19,14 @@ function TrayComponentText({
     redirecturl }) {
 
     // media query display
-    const display = useMediaQuery('(min-width: 768px)');
+    const display = useMediaQuery('(max-width: 768px)');
 
     const [movies, setMovies] = useState({ movies: [] })
-
+    const trending = useSelector(state => pathOr([],
+        ['homepageReducer', 'pagecontent', 'trendingmovies', 'records'])(state));
     useEffect(() => {
-        getByGenrer('Horror').then(res => setMovies({ ...movies, animationMovies: res }));
-    }, [])
+        getByGenrer('Horror').then(res => setMovies({ ...movies, animationMovies: trending }));
+    }, []);
 
     return (
         <div>
@@ -47,7 +50,7 @@ function TrayComponentText({
                 <aside className="slider-width">
                     <Home
                         progressBar={progressBar}
-                        movies={movies}
+                        movies={trending}
                         title={title}
                         displayCard={display ? 3 : 5}
                         redirecturl={redirecturl}

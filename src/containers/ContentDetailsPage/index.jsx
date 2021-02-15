@@ -6,7 +6,7 @@ import { pathOr } from 'ramda';
 import Footer from '../../components/Footer/footer';
 import MainHeader from '../../components/Header';
 import { isSignedIn, deleteCookie } from '../../components/Forms/SignIn/authentication';
-import Movie from '../../components/ContentDetails/Movie';
+import Movie from '../../components/ContentDetails';
 import { signinActions } from '../../components/Forms/SignIn/actions';
 import './style.scss';
 
@@ -29,7 +29,7 @@ const ContentDetails = () => {
             }
         }
         dispatch(signinActions.resetSignInParams());
-        history.push('./signIn')
+        history.push('./signIn');
     }
     return (
         <>

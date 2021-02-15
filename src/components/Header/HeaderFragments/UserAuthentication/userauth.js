@@ -19,7 +19,8 @@ import {
     CrossBtnStyle,
     FigureStyle,
     SubscribeBtnStyle,
-    SignInBtnStyle
+    SignInBtnStyle,
+    avatarimg
 } from './user-auth-style';
 
 
@@ -98,7 +99,7 @@ export const MenueCard = ({ show, setShow, icons, handleSignInClick, dispatch, h
         <SideNav
             navStyle={
                 {
-                    minWidth: '50%',
+                    minWidth: '30%',
                     minHeight: '100%',
                     height: 'auto',
                     backgroundColor: '#131722'
@@ -115,7 +116,7 @@ export const MenueCard = ({ show, setShow, icons, handleSignInClick, dispatch, h
     )
 }
 
-export const AuthenticatedUser = () => {
+export const AuthenticatedUser = ({sm}) => {
     return (
         <HeaderContext.Consumer>
             { ({ profile, setShow, show, handleSignInClick, emailAddress, icons, dispatch, history }) => (
@@ -124,8 +125,9 @@ export const AuthenticatedUser = () => {
                         src={profile}
                         // src={account} 
                         alt="signed-in avatar"
-                        style={{ height: '44px', width: '44px' }}
+                        style={{ ...avatarimg(sm) }}
                         id="signedIn"
+                        className={'avatar'}
                         onClick={() => setShow(!show)}
                     />
                     <MenueCard setShow={setShow} show={show} icons={icons} handleSignInClick={handleSignInClick} dispatch={dispatch} history={history} />
@@ -137,14 +139,15 @@ export const AuthenticatedUser = () => {
 };
 
 
-export default function UserAuth() {
+export default function UserAuth({ breakpoint }) {
+    var sm = pathOr('', ['sm'])(breakpoint)
     return (
         <HeaderContext.Consumer>
             {
                 ({ isSignedIn, button, handleSignInClick }) => (
                     <>
-                        {!isSignedIn && <Button onClick={() => handleSignInClick()} style={SignInBtnStyle()}>Sign In</Button>}
-                        {isSignedIn && <AuthenticatedUser />}
+                        {!isSignedIn && <Button onClick={() => handleSignInClick()} style={SignInBtnStyle(sm)}>Sign In</Button>}
+                        {isSignedIn && <AuthenticatedUser sm={sm}/>}
                     </>
                 )
 

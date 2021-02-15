@@ -10,7 +10,9 @@ import { ContentTraySection } from './ContentTraysSection';
 import TrayComponentFilter from '../../components/TrayComponentFilter/trayComponent';
 import TrayComponentText from '../../components/TrayComponentWithText/index';
 import TrayComponent from '../../components/TrayComponent/index';
+import TrayWithTitleHome from './Trays/TrayWithTitleHome/tray-with-title-home';
 import TrendingNowTrayHome from './Trays/TrendingNowHome/trending-now-home';
+import TrayWithFilterHome from './Trays/TrayWithFilterHome/tray-with-filter-home';
 import { Global, css } from '@emotion/react';
 import Footer from '../../components/Footer/footer';
 
@@ -39,25 +41,25 @@ const availableHomePageComponent = [
 
     },
     {
-        module_id: 'new-release-carousal-component',
-        component: TrayComponent
+        module_id: 'traywithtitlecomponent',
+        component: TrayWithTitleHome
     },
     {
-        module_id: 'trending-movies-component',
+        module_id: 'trendingtraycomponent',
         component: TrendingNowTrayHome
     },
     {
-        module_id: 'popular-movies-now-component',
+        module_id: 'traywithtextcomponent',
         component: TrayComponentText
     },
     {
         module_id: 'footer-component',
         component: Footer
     },
-    // {
-    //     module_id: 'continue-watching-tray-component',
-    //     component: TrayComponentFilter
-    // }
+    {
+        module_id: 'traywithfiltercomponent',
+        component: TrayWithFilterHome
+    }
 ];
 
 
@@ -90,20 +92,20 @@ function HomePageContent({ user }) {
                     index: 1
                 },
                 {
-                    module_id: 'continue-watching-tray-component',
+                    module_id: 'traywithfiltercomponent',
                     index: 2
                 },
                 {
-                    module_id: 'new-release-carousal-component',
+                    module_id: 'traywithtitlecomponent',
                     index: 5
                 },
                 {
-                    module_id: 'trending-movies-component',
+                    module_id: 'trendingtraycomponent',
                     index: 4
                 },
 
                 {
-                    module_id: 'popular-movies-now-component',
+                    module_id: 'traywithtextcomponent',
                     index: 3
                 }
 
@@ -165,7 +167,7 @@ function HomePageContent({ user }) {
         getByGenrer('Action').then(
             res => {
                 setMovies({ ...trending, movies: res });
-                dispatch({ type: 'PAGE_CONTENT', ...{ payload: res } })
+                dispatch({ type: 'HOME_PAGE_CONTENT', ...{ payload: res } })
             }
         );
 

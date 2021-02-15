@@ -2,7 +2,7 @@ import React from 'react';
 import { pathOr } from 'ramda';
 import { HeaderContext } from '../../header-context';
 import { Nav, Link } from 'react-bootstrap';
-import { CategoryStyle } from './category-style';
+import { CategoryStyle, CategoryGlobalStyle } from './category-style';
 
 export default function Category() {
     return (
@@ -10,16 +10,8 @@ export default function Category() {
             {
                 ({ breakpoint, category, themename }) => (
                     <>
-                        <style type="text/css">
-                            {
-                                `
-                                .${themename}-category .nav-link {
-                                        font-size: 18px;
-                                }
-                                `
-                            }
-                        </style>
-                        <Nav className={`mr-auto ${themename}-category`} style={{ display: `${pathOr('', ['md'])(breakpoint) ? 'none' : ''}` }}>
+                        <CategoryGlobalStyle themename={themename} />
+                        <Nav className={`mr-auto ${themename}-category`} style={{ display: `${pathOr('', ['sm'])(breakpoint) ? 'none' : ''}` }}>
                             <Nav.Link href="/?movies" style={CategoryStyle(pathOr(['style'])(category), breakpoint)} className={"mr-3"}>
                                 Movies
                         </Nav.Link >

@@ -10,6 +10,7 @@ import { pathOr } from 'ramda';
 import { equals } from 'ramda';
 import { isSignedIn, signedIn } from './authentication';
 import { rules } from '../../../helpers/rules';
+import { SignInGlobalStyle } from './signinstyle';
 
 require('./style.scss');
 
@@ -179,13 +180,7 @@ function SignIn() {
 
     return (
         <div>
-            <style type="text/css">
-                {`
-                label {
-                  display: flex;
-                         }   
-                 `}
-            </style>
+            <SignInGlobalStyle />
             <div className="tentkotta-sans-font-loaded">
                 <div className="basicLayout simplicity" dir="ltr">
                     <div className="simpleContainer">

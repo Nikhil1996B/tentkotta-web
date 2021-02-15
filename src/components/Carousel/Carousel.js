@@ -36,10 +36,12 @@ class Carousel extends Component {
 
     return (
       <section className="carousel-container">
-        <div className="carousel-title" style={style && style.displayMode ? style.displayMode : {}}>
-          {title}
-          {style && <hr className="horzontal-fill" />}
-        </div>
+        {title &&
+          <div className="carousel-title" style={style && style.displayMode ? style.displayMode : {}}>
+            {title}
+            {style && <hr className="horzontal-fill" />}
+          </div>
+        }
         <div className="carousel-content" >
           <ItemsCarousel
             // Placeholder configurations

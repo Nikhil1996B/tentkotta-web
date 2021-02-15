@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import pathOr from "ramda/src/pathOr";
 import equals from "ramda/src/equals";
+import { getByGenrer } from '../../../../components/Carousel/api/Movies';
 import { TrendingTrayContext } from './trending-now-context';
 import TrendingNowTray from '../../../../components/TrendingComponent/indexv1';
 import { useMediaQuery } from '../../../../components/Header/viewportHook';
@@ -20,7 +21,8 @@ export const TrendingNowTrayConsumer = () => {
                     pFontClr,
                     title,
                     filtertype,
-                    trending
+                    trending,
+                    handleFilterClick
                 }) => (
                     <>
                         <TrendingNowTray
@@ -34,6 +36,7 @@ export const TrendingNowTrayConsumer = () => {
                             title={title}
                             filtertype={filtertype}
                             trending={trending}
+                            handleFilterClick={handleFilterClick}
                         />
                     </>
                 )
@@ -48,7 +51,9 @@ export default function TrendingNowTrayHome() {
     const breakpoint = {
         sm: useMediaQuery('(max-width: 576px)'),
         md: useMediaQuery('(min-width: 768px)'),
-        lg: useMediaQuery('(min-width:1200px')
+        lg: useMediaQuery('(min-width:1200px)'),
+        xl: useMediaQuery('(min-width: 1440px)'),
+        xxl: useMediaQuery('(min-width:2000px)')
     };
 
 
@@ -65,6 +70,14 @@ export default function TrendingNowTrayHome() {
     // Destructure the theme props 
     const { bgColor, primaryBtnColor: primBtCol, primaryFontColor: pFontClr, secondaryFontColor: sFontClr } = pathOr({}, ['colors'], themes);
 
+    const handleFilterClick = (value) => {
+        getByGenrer(`${value}`).then(
+            res => {
+                dispatch({ type: 'HOME_PAGE_CONTENT', ...{ payload: res } })
+            }
+        );
+    }
+
     const TrendingNowState = {
         breakpoint,
         dispatch,
@@ -75,8 +88,11 @@ export default function TrendingNowTrayHome() {
         pFontClr,
         title,
         filtertype,
-        trending
+        trending,
+        handleFilterClick
     };
+
+
     return (
         <TrendingTrayContext.Provider value={TrendingNowState}>
             <TrendingNowTrayConsumer />

@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import { SignUpPage } from "../../containers/SignUpPage/SignUpPage";
 import HomePage from "../../containers/HomePage/page-content-slot";
+import SearchResultsPageContent from "../../containers/SearchResults/search-page-content-slot";
+import ContentDetailsPageContent from "../../containers/ContentDetailsPage/content-details-page-slot";
 import { ErrorPage } from "../../containers/ErrorPage/ErrorPage";
 import { VideoPage } from "../../containers/VideoPage/VideoPage";
 import VideoInfoPage from "../../containers/VideoInfoPage/container";
@@ -29,7 +31,7 @@ function Routes() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/home" component={HomePage} />
-        <Route path="/search" component={SearchResults} />
+        <Route path="/search" component={SearchResultsPageContent} />
         <Route path="/signIn" component={SignInPage} />
         <Route path="/signUp" component={SignUpPage} />
         <Route path="/subscriptionactivated" component={SubscriptionActivated} />
@@ -43,7 +45,7 @@ function Routes() {
         <Route path="/forgotpassword" component={ForgotPassword} />
         <ProtectedRoute path="/player" component={VideoPage} />
         <ProtectedRoute path="/videoinfo" component={VideoInfoPage} />
-        <ProtectedRoute path="/contentdetails" component={ContentDetails} />
+        <ProtectedRoute path="/contentdetails" component={ContentDetailsPageContent} />
         <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
@@ -71,7 +73,7 @@ export default Routes;
 // const VideoPageRenderer = React.lazy(() =>
 //   import("../../containers/VideoInfoPage/container").then(async module => {
 //     const videoInfo = await import("../../containers/VideoInfoPage/reducers/reducer").then(
-//       videoModule =>   .default
+//       videoModule =>   videoModule.default
 //     );
 //     store.injectReducer("videoInfo", videoInfo);
 

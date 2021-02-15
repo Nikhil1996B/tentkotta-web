@@ -1,3 +1,4 @@
+import React from 'react';
 import { pathOr } from 'ramda';
 
 export const CategoryStyle = (style = '', breakpoint) => {
@@ -7,4 +8,18 @@ export const CategoryStyle = (style = '', breakpoint) => {
         color: `${color}`,
         fontSize: `${bp ? 1 : 1.5}rem`
     }
+}
+
+export const CategoryGlobalStyle = ({ themename }) => {
+    return (
+        <>
+            <style type="text/css">
+                {`
+                 .${themename}-category .nav-link {
+                    font-size: 18px;
+                 }
+            `}
+            </style>
+        </>
+    )
 }

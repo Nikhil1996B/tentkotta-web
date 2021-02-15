@@ -28,10 +28,23 @@ const HomePageLayout = () => {
                         position: initial;
                         }
                     }
+                    .tentkotta-Home-Page .trayInfoWrapper {
+                      padding-left: 3rem;
+                    }
                     .upgrade {
                         font-family: GothamLight;
                         background: #e1540f !important;
                       }
+                 }
+                 @media screen and (max-width: 480px) {
+                  .tentkotta-Home-Page .trayInfoWrapper {
+                    padding-left: 0px !important;
+                  }
+                }
+                 @media only screen and (device-width: 768px) {
+                  .tentkotta-Home-Page .trayInfoWrapper {
+                    padding-left: 0px !important;
+                  }
                  }
                 `
         }

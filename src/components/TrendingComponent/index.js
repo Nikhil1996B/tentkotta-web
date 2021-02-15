@@ -64,6 +64,8 @@ function TrendingNow({ filterAvailable = true, title = "", className }) {
         'Crime'
     ];
     const isActive = 'active';
+    const trendingmovies = useSelector(state => pathOr([],
+        ['homepageReducer', 'pagecontent', 'trendingmovies', 'records'])(state));
     const firstValue = trending && trending.movies ? trending.movies.slice(1, 5) : null;
     function handleClick(value) {
         getByGenrer(`${value}`).then(res => setMovies({ ...trending, movies: res }));

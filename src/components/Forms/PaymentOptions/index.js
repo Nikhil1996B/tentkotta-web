@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import PromoCode from './promoCode';
 import { useHistory } from 'react-router-dom';
 import './style.scss';
+import { PaymentOptionsGlobalStyle } from './paymentoptionstyle';
 
 export const PaymentOptions = () => {
     const history = useHistory();
     return (
         <>
+            <PaymentOptionsGlobalStyle />
             <section >
                 <div className="tentkotta-sans-font-loaded">
                     <div className="basicLayout simplicity" dir="ltr">
@@ -49,7 +51,7 @@ export const PaymentOptions = () => {
                                     <div className="promobtn">
                                         <PromoCode />
                                     </div>
-                                    <p className="card-price-section" onClick={()=>{history.push('./stripecheckout')}}>
+                                    <p className="card-price-section" onClick={() => { history.push('./stripecheckout') }}>
                                         <span className="card-left-section">
                                             <span>
                                                 Credit Card / Debit Card

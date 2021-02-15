@@ -16,6 +16,14 @@ export const CardStyle = () => {
     }
 }
 
+export const avatarimg = (sm) => {
+    return {
+        height: `${sm ? '30px' : '44px'}`,
+        width: `${sm ? '30px' : '44px'}`,
+        marginRight: `${sm ? '1rem':'2rem'}`
+    }
+}
+
 export const ImageStyle = () => {
     return {
         background: 'white',
@@ -41,7 +49,7 @@ export const FigureStyle = {
         height: '',
         width: '',
         background: 'grey',
-        borderRadius: '50%'
+        borderRadius: '50%',
     }),
     caption: () => ({
         color: '#707070',
@@ -52,19 +60,21 @@ export const FigureStyle = {
 export const SubscribeBtnStyle = {
     background: '#E1540F',
     color: '#FFFFFF',
-    padding: '2rem 6rem',
+    padding: '1rem 6rem',
     margin: '2rem 0',
     border: 'none',
     fontSize: '14px'
 }
 
-export const SignInBtnStyle = () => {
+export const SignInBtnStyle = (sm) => {
     return {
         background: '#E1540F',
         color: '#FFFFFF',
-        font: '19px',
-        padding: '0.8rem 1.5rem',
+        fontSize: `${sm ? '10px' : '14px'}`,
+        padding: `${sm ? '' : '0.4rem 1.5rem'}`,
+        marginRight: '2rem',
         border: 'none',
+        width: `${sm ? '22%' : ''}`,
         textTransform: 'uppercase'
     }
 }

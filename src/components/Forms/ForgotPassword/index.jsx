@@ -8,6 +8,7 @@ import { signinActions } from '../SignIn/actions';
 import { apiTokenActions } from "../../../actions/apiToken.action";
 import { rules } from '../../../helpers/rules';
 import { MessageContent } from '../SignIn/index';
+import { ForgotPasswordGlobalStyle } from './forgotpasswordformstyle';
 require('../SignIn/style.scss');
 
 function ForgotPassword() {
@@ -38,13 +39,7 @@ function ForgotPassword() {
     }, []);
     return (
         <>
-            <style type="text/css">
-                {`
-                label {
-                  display: flex;
-                         }   
-                 `}
-            </style>
+            <ForgotPasswordGlobalStyle />
             <div>
                 <div className="tentkotta-sans-font-loaded">
                     <div className="basicLayout simplicity" dir="ltr">

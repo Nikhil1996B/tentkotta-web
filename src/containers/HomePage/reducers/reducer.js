@@ -8,7 +8,7 @@ export default function homepageReducer(state = initialState, action) {
             return { ...state, movies: action.payload, loading: false, error: null }
         case types.GET_CONTINUEWATCHING:
             return { ...state, continueWaching: action.payload, loading: false, error: null }
-        case types.PAGE_CONTENT:
+        case types.HOME_PAGE_CONTENT:
             return {
                 ...state, pagecontent: {
                     trendingmovies: {

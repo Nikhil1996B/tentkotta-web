@@ -26,9 +26,9 @@ export const HeroBannerText = () => {
 
     // media query display
     const breakpoint = {
-        sm: useMediaQuery('(min-width: 576px)'),
+        sm: useMediaQuery('(max-width: 576px)'),
         md: useMediaQuery('(min-width: 768px)'),
-        lg: useMediaQuery('(min-width:1200px')
+        lg: useMediaQuery('(min-width:1200px)')
     };
 
 

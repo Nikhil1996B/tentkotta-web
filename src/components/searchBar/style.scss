@@ -47,7 +47,8 @@
     width: 50%;
 }
 .movie-list-container h1 {
-    font: normal normal normal 25px/38px;
+    font: normal normal normal 25px;
+    font-size: 25px !important;
     letter-spacing: 0px;
     color: #ffffff;
     margin: 0;
@@ -163,14 +164,34 @@
 
 @media screen and (max-width: $small-below) {
     .navbar-input {
+        font-size: 12px;
+        width: auto;
+        input {
+            background: transparent;
+            border: none;
+            color: #fff;
+            margin-left: -50px;
+            /* width: 100%; */
+            font-size: 11px;
+            transition: opacity 0.25s ease-in-out;
+        }
         img {
-            width: 16px !important;
+            width: 25% !important;
             cursor: pointer;
-            border-radius: 50%;
+            // border-radius: 50%;
             padding: 7px;
         }
     }
+    .navbar-input-space {
+        margin-right: 0;
+    }
     .navbar-input-container {
         height: 10%;
+    }
+    .movie-list-container {
+        .filter-btn {
+            background-color: #2f323c;
+            padding: 1%;
+        }
     }
 }

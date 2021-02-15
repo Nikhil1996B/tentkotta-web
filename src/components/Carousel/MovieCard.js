@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import Progress from '../../UI_Frontendlib/atoms/linerprogress';
 import HoverScreen from "./HoverScreen";
 import Skeleton from '@material-ui/lab/Skeleton';
@@ -13,7 +14,7 @@ const TRUNCATE_LENGTH = 100;
 
 
 const MovieCard = ({ movie, style, progressBar = false, displayTextOnCard = false, displayHoverState = false, redirecturl }) => {
-
+  const history = useHistory();
   const setPosition = (item) => {
     var x = document.getElementById(`1${item.id}`);
     var divItem = document.getElementById(`2${item.id}`);
@@ -38,7 +39,10 @@ const MovieCard = ({ movie, style, progressBar = false, displayTextOnCard = fals
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
         }}
-        onClick={() => { return window.location.pathname = `${redirecturl}` }}
+        onClick={() => {
+          history.push(`contentdetails?id=${movie.id}`);
+          // return window.location.pathname = `${redirecturl}`
+        }}
       >
         {/* <div className="play-icon">
         <img src={playbtn} alt="play button" />

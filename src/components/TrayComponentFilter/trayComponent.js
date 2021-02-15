@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Home from '../Carousel/Home';
+import { useSelector, useDispatch } from 'react-redux';
+import { pathOr } from 'ramda';
 import { getByGenrer } from '../Carousel/api/Movies';
 import { useMediaQuery } from '../../components/Header/viewportHook';
 import { FilterSlider } from '../TrendingComponent';
-require('./style.scss')
+require('./style.scss');
 
 function TrayComponentFilter({ filterAvailable = true, title, redirecturl }) {
     const [movies, setMovies] = useState({ movies: [] })
     // media query display
-    const display = useMediaQuery('(min-width: 768px)');
+    const display = useMediaQuery('(max-width: 768px)');
     const [selectedGenere, seSelectedGenere] = useState('Drama');
     useEffect(() => {
         getByGenrer('Animation').then(res => setMovies({ ...movies, animationMovies: res }));
@@ -20,10 +22,7 @@ function TrayComponentFilter({ filterAvailable = true, title, redirecturl }) {
         'Drama',
         'Sci',
         'Adventure',
-        'Crime',
-        'Romance',
-        'Latest',
-        'Watch'
+        'Crime'
     ]
 
     const style = {
@@ -33,10 +32,17 @@ function TrayComponentFilter({ filterAvailable = true, title, redirecturl }) {
         hrStyle: {
 
         }
-    }
-
+    };
+    const dispatch = useDispatch();
+    const trending = useSelector(state => pathOr([],
+        ['homepageReducer', 'pagecontent', 'trendingmovies', 'records'])(state));
     const handleClick = (value) => {
-        getByGenrer(`${value}`).then(res => setMovies({ ...movies, animationMovies: res }));
+        getByGenrer(`${value}`).then(
+            res => {
+                dispatch({ type: 'HOME_PAGE_CONTENT', ...{ payload: res } })
+            }
+        );
+        getByGenrer(`${value}`).then(res => setMovies({ ...movies, animationMovies: trending }));
         seSelectedGenere(`${value}`);
     }
     return (
@@ -46,7 +52,7 @@ function TrayComponentFilter({ filterAvailable = true, title, redirecturl }) {
                     {title && <h1 style={{ width: '30%', color: 'white' }}>{title}</h1>}
                     {title && <hr style={{ width: '40%' }} />}
                     {filterAvailable &&
-                        <nav className="trending-listitem" style={{ width: 'auto' }}>
+                        <nav className="" style={{ width: 'auto' }}>
                             <ul>
                                 {genre.map((value, index) =>
                                     <li key={index} onClick={e => handleClick(value)} className={selectedGenere == value ? isActive : ''}>
@@ -58,14 +64,15 @@ function TrayComponentFilter({ filterAvailable = true, title, redirecturl }) {
                             </ul>
                         </nav>
                     }
-                    {
+                    {/* {
                         <section className="slick-slider-mobile">
                             <FilterSlider handleClick={handleClick} selectedGenere={selectedGenere} genre={genre} isActive={isActive} />
                         </section>
-                    }
+                    } */}
                 </div>
                 <Home
-                    movies={movies}
+                    title={'New Release Movies'}
+                    movies={trending}
                     displayCard={display ? 3 : 8}
                     redirecturl={redirecturl}
                 />

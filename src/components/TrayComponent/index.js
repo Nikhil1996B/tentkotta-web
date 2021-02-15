@@ -15,7 +15,7 @@ function TrayComponent({
     redirecturl
 }) {
     // media query display
-    const display = useMediaQuery('(min-width: 768px)');
+    const display = useMediaQuery('(max-width: 768px)');
     const [movies, setMovies] = useState({ movies: [] })
     useEffect(() => {
         getByGenrer('Action').then(res => setMovies({ ...movies, animationMovies: res }));
